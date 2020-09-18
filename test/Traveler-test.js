@@ -2,14 +2,14 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Traveler from '../src/Traveler';
-import travelersData from './test-data/travelers-data';
+import travelerData from './test-data/traveler-data';
 
 describe('Traveler class and methods', function() {
 
   let traveler;
 
   beforeEach(() => {
-    traveler = new Traveler(travelersData[0]);
+    traveler = new Traveler(travelerData[0]);
   });
 
   it('should be a function', () => {

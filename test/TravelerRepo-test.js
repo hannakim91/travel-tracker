@@ -1,12 +1,12 @@
 import chai from 'chai';
 const expect = chai.expect;
 
-import Traveler from '../src/TravelersRepo';
-import TravelerRepo from '../src/TravelersRepo';
-import travelersData from './test-data/travelers-data';
-import tripsData from './test-data/trips-data';
+import Traveler from '../src/TravelerRepo';
+import TravelerRepo from '../src/TravelerRepo';
+import travelerData from './test-data/traveler-data';
+import tripData from './test-data/trip-data';
 
-describe('TravelersRepo class and methods', function() {
+describe('TravelerRepo class and methods', function() {
 
   let travelerRepo;
   let traveler1;
@@ -14,9 +14,9 @@ describe('TravelersRepo class and methods', function() {
   let traveler3;
   let travelers;
   beforeEach(() => {
-    traveler1 = new Traveler(travelersData[0])
-    traveler2 = new Traveler(travelersData[1])
-    traveler3 = new Traveler(travelersData[2])
+    traveler1 = new Traveler(travelerData[0])
+    traveler2 = new Traveler(travelerData[1])
+    traveler3 = new Traveler(travelerData[2])
     travelers = [traveler1, traveler2, traveler3]
     travelerRepo = new TravelerRepo(travelers);
   });
@@ -35,7 +35,7 @@ describe('TravelersRepo class and methods', function() {
   });
 
   it('should return a list of trips for a given traveler', () => {
-    console.log(traveler1)
-    expect(travelerRepo.findTrips(traveler1, tripsData)).to.deep.equal([tripsData[0], tripsData[1], tripsData[2], tripsData[3], tripsData[16], tripsData[18]]);
+    
+    expect(travelerRepo.findTrips(7, tripData)).to.deep.equal([tripData[0], tripData[1], tripData[2], tripData[3], tripData[16], tripData[18]]);
   });
 });
