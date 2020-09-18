@@ -1,8 +1,8 @@
 const tripsData = [
   {
     "id": 1,
-    "userID": 44,
-    "destinationID": 49,
+    "userID": 7,
+    "destinationID": 15,
     "travelers": 1,
     "date": "2019/09/16",
     "duration": 8,
@@ -13,8 +13,8 @@ const tripsData = [
   },
   {
     "id": 2,
-    "userID": 35,
-    "destinationID": 25,
+    "userID": 7,
+    "destinationID": 16,
     "travelers": 5,
     "date": "2020/10/04",
     "duration": 18,
@@ -25,8 +25,8 @@ const tripsData = [
   },
   {
     "id": 3,
-    "userID": 3,
-    "destinationID": 22,
+    "userID": 7,
+    "destinationID": 17,
     "travelers": 4,
     "date": "2020/05/22",
     "duration": 17,
@@ -37,8 +37,8 @@ const tripsData = [
   },
   {
     "id": 4,
-    "userID": 43,
-    "destinationID": 14,
+    "userID": 7,
+    "destinationID": 18,
     "travelers": 2,
     "date": "2020/02/25",
     "duration": 10,
@@ -49,8 +49,8 @@ const tripsData = [
   },
   {
     "id": 5,
-    "userID": 42,
-    "destinationID": 29,
+    "userID": 8,
+    "destinationID": 19,
     "travelers": 3,
     "date": "2020/04/30",
     "duration": 18,
@@ -61,8 +61,8 @@ const tripsData = [
   },
   {
     "id": 6,
-    "userID": 29,
-    "destinationID": 35,
+    "userID": 8,
+    "destinationID": 25,
     "travelers": 3,
     "date": "2020/06/29",
     "duration": 9,
@@ -73,7 +73,7 @@ const tripsData = [
   },
   {
     "id": 7,
-    "userID": 37,
+    "userID": 8,
     "destinationID": 17,
     "travelers": 5,
     "date": "2020/5/28",
@@ -85,19 +85,19 @@ const tripsData = [
   },
   {
     "id": 8,
-    "userID": 36,
-    "destinationID": 39,
+    "userID": 8,
+    "destinationID": 19,
     "travelers": 6,
     "date": "2021/02/07",
     "duration": 4,
-    "status": "approved",
+    "status": "pending",
     "suggestedActivities": [
       
     ]
   },
   {
     "id": 9,
-    "userID": 24,
+    "userID": 9,
     "destinationID": 19,
     "travelers": 5,
     "date": "2019/12/19",
@@ -110,7 +110,7 @@ const tripsData = [
   {
     "id": 10,
     "userID": 9,
-    "destinationID": 50,
+    "destinationID": 24,
     "travelers": 6,
     "date": "2020/07/23",
     "duration": 17,
@@ -121,8 +121,8 @@ const tripsData = [
   },
   {
     "id": 11,
-    "userID": 50,
-    "destinationID": 5,
+    "userID": 9,
+    "destinationID": 23,
     "travelers": 4,
     "date": "2020/10/14",
     "duration": 4,
@@ -133,8 +133,8 @@ const tripsData = [
   },
   {
     "id": 12,
-    "userID": 33,
-    "destinationID": 33,
+    "userID": 9,
+    "destinationID": 22,
     "travelers": 6,
     "date": "2020/10/17",
     "duration": 6,
@@ -145,20 +145,20 @@ const tripsData = [
   },
   {
     "id": 13,
-    "userID": 14,
-    "destinationID": 12,
+    "userID": 9,
+    "destinationID": 21,
     "travelers": 1,
     "date": "2021/02/12",
     "duration": 11,
-    "status": "approved",
+    "status": "pending",
     "suggestedActivities": [
       
     ]
   },
   {
     "id": 14,
-    "userID": 19,
-    "destinationID": 35,
+    "userID": 10,
+    "destinationID": 20,
     "travelers": 1,
     "date": "2020/09/24",
     "duration": 10,
@@ -169,8 +169,8 @@ const tripsData = [
   },
   {
     "id": 15,
-    "userID": 50,
-    "destinationID": 13,
+    "userID": 10,
+    "destinationID": 23,
     "travelers": 3,
     "date": "2020/07/04",
     "duration": 6,
@@ -181,8 +181,8 @@ const tripsData = [
   },
   {
     "id": 16,
-    "userID": 19,
-    "destinationID": 27,
+    "userID": 10,
+    "destinationID": 17,
     "travelers": 1,
     "date": "2019/11/20",
     "duration": 9,
@@ -193,8 +193,8 @@ const tripsData = [
   },
   {
     "id": 17,
-    "userID": 28,
-    "destinationID": 31,
+    "userID": 7,
+    "destinationID": 21,
     "travelers": 1,
     "date": "2019/10/30",
     "duration": 20,
@@ -205,8 +205,8 @@ const tripsData = [
   },
   {
     "id": 18,
-    "userID": 18,
-    "destinationID": 2,
+    "userID": 10,
+    "destinationID": 21,
     "travelers": 2,
     "date": "2020/09/25",
     "duration": 17,
@@ -217,8 +217,8 @@ const tripsData = [
   },
   {
     "id": 19,
-    "userID": 47,
-    "destinationID": 47,
+    "userID": 7,
+    "destinationID": 17,
     "travelers": 4,
     "date": "2019/07/21",
     "duration": 5,
@@ -229,7 +229,7 @@ const tripsData = [
   },
   {
     "id": 20,
-    "userID": 41,
+    "userID": 11,
     "destinationID": 19,
     "travelers": 4,
     "date": "2020/10/05",
@@ -241,8 +241,8 @@ const tripsData = [
   },
   {
     "id": 21,
-    "userID": 12,
-    "destinationID": 10,
+    "userID": 11,
+    "destinationID": 20,
     "travelers": 1,
     "date": "2020/01/28",
     "duration": 18,
@@ -253,8 +253,8 @@ const tripsData = [
   },
   {
     "id": 22,
-    "userID": 22,
-    "destinationID": 9,
+    "userID": 11,
+    "destinationID": 19,
     "travelers": 4,
     "date": "2020/05/01",
     "duration": 19,
@@ -265,7 +265,7 @@ const tripsData = [
   },
   {
     "id": 23,
-    "userID": 14,
+    "userID": 12,
     "destinationID": 24,
     "travelers": 6,
     "date": "2020/01/02",
@@ -277,8 +277,8 @@ const tripsData = [
   },
   {
     "id": 24,
-    "userID": 46,
-    "destinationID": 26,
+    "userID": 12,
+    "destinationID": 16,
     "travelers": 5,
     "date": "2019/11/15",
     "duration": 7,
@@ -289,7 +289,7 @@ const tripsData = [
   },
   {
     "id": 25,
-    "userID": 18,
+    "userID": 12,
     "destinationID": 12,
     "travelers": 6,
     "date": "2019/10/26",
@@ -298,67 +298,7 @@ const tripsData = [
     "suggestedActivities": [
       
     ]
-  },
-  {
-    "id": 26,
-    "userID": 25,
-    "destinationID": 15,
-    "travelers": 3,
-    "date": "2019/12/10",
-    "duration": 9,
-    "status": "approved",
-    "suggestedActivities": [
-      
-    ]
-  },
-  {
-    "id": 27,
-    "userID": 43,
-    "destinationID": 7,
-    "travelers": 6,
-    "date": "2019/07/16",
-    "duration": 5,
-    "status": "approved",
-    "suggestedActivities": [
-      
-    ]
-  },
-  {
-    "id": 28,
-    "userID": 48,
-    "destinationID": 31,
-    "travelers": 3,
-    "date": "2020/02/03",
-    "duration": 14,
-    "status": "approved",
-    "suggestedActivities": [
-      
-    ]
-  },
-  {
-    "id": 29,
-    "userID": 42,
-    "destinationID": 25,
-    "travelers": 3,
-    "date": "2019/08/30",
-    "duration": 4,
-    "status": "approved",
-    "suggestedActivities": [
-      
-    ]
-  },
-  {
-    "id": 30,
-    "userID": 33,
-    "destinationID": 29,
-    "travelers": 1,
-    "date": "2020/07/17",
-    "duration": 5,
-    "status": "approved",
-    "suggestedActivities": [
-      
-    ]
-  },
+  }
 ]
 
 export default tripsData
