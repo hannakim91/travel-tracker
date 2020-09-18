@@ -25,4 +25,8 @@ describe('Traveler class and methods', function() {
     expect(traveler.name).to.equal('Emmet Sandham');
     expect(traveler.travelerType).to.equal('relaxer');
   });
+
+  it('should be able to store an array of trips', () => {
+    expect(traveler.trips).to.deep.equal([])
+  })
 });
