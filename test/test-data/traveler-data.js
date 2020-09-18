@@ -28,6 +28,11 @@ const travelerData = [
     "id": 12,
     "name": "Lannie Heynel",
     "travelerType": "history buff"
+  },
+  {
+    "id": 16,
+    "name": "Deirdre Paeckmeyer",
+    "travelerType": "foodie"
   }
 ]
 

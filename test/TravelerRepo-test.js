@@ -14,10 +14,10 @@ describe('TravelerRepo class and methods', function() {
   let traveler3;
   let travelers;
   beforeEach(() => {
-    traveler1 = new Traveler(travelerData[0])
-    traveler2 = new Traveler(travelerData[1])
-    traveler3 = new Traveler(travelerData[2])
-    travelers = [traveler1, traveler2, traveler3]
+    traveler1 = new Traveler(travelerData[0]);
+    traveler2 = new Traveler(travelerData[2]);
+    traveler3 = new Traveler(travelerData[6]);
+    travelers = [traveler1, traveler2, traveler3];
     travelerRepo = new TravelerRepo(travelers);
   });
 
@@ -31,12 +31,16 @@ describe('TravelerRepo class and methods', function() {
 
   it('should initialize with an array of Travelers', () => {
     expect(travelerRepo.travelers.length).to.equal(3);
-    expect(travelerRepo.travelers[0]).to.deep.equal(traveler1)
+    expect(travelerRepo.travelers[0]).to.deep.equal(traveler1);
   });
 
   it('should find and store a list of trips for a given traveler', () => {
-    travelerRepo.findTrips(traveler1, tripData)
-    console.log(traveler1)
+    travelerRepo.findTrips(traveler1, tripData);
     expect(traveler1.trips).to.deep.equal([tripData[0], tripData[1], tripData[2], tripData[3], tripData[16], tripData[18]]);
+  });
+
+  it('should not modify a traveler\'s trips if no trips match their id', () => {
+    travelerRepo.findTrips(traveler3, tripData);
+    expect(traveler1.trips).to.deep.equal([]);
   });
 });
