@@ -2,13 +2,13 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Traveler from '../src/TravelersRepo';
-import TravelersRepo from '../src/TravelersRepo';
+import TravelerRepo from '../src/TravelersRepo';
 import travelersData from './test-data/travelers-data';
 import tripsData from './test-data/trips-data';
 
 describe('TravelersRepo class and methods', function() {
 
-  let travelersRepo;
+  let travelerRepo;
   let traveler1;
   let traveler2;
   let traveler3;
@@ -18,23 +18,24 @@ describe('TravelersRepo class and methods', function() {
     traveler2 = new Traveler(travelersData[1])
     traveler3 = new Traveler(travelersData[2])
     travelers = [traveler1, traveler2, traveler3]
-    travelersRepo = new TravelersRepo(travelers);
+    travelerRepo = new TravelerRepo(travelers);
   });
 
   it('should be a function', () => {
-    expect(TravelersRepo).to.be.a('function');
+    expect(TravelerRepo).to.be.a('function');
   });
 
   it('should be an instance of TravelersRepo', () => {
-    expect(travelersRepo).to.be.an.instanceof(TravelersRepo);
+    expect(travelerRepo).to.be.an.instanceof(TravelerRepo);
   });
 
   it('should initialize with an array of Travelers', () => {
-    expect(travelersRepo.travelers.length).to.equal(3);
-    expect(travelersRepo.travelers[0]).to.deep.equal(traveler1)
+    expect(travelerRepo.travelers.length).to.equal(3);
+    expect(travelerRepo.travelers[0]).to.deep.equal(traveler1)
   });
 
-  it('should return a list of trips for a given user\'s id #', () => {
-    expect(travelersRepo.findTrips(7, tripsData)).to.deep.equal([]);
+  it('should return a list of trips for a given traveler', () => {
+    console.log(traveler1)
+    expect(travelerRepo.findTrips(traveler1, tripsData)).to.deep.equal([tripsData[0], tripsData[1], tripsData[2], tripsData[3], tripsData[16], tripsData[18]]);
   });
 });

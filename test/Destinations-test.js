@@ -10,7 +10,7 @@ describe('Traveler class and methods', function() {
 
   beforeEach(() => {
     destinations = new Destination();
-    console.log(destinationsData)
+    // console.log(destinationsData)
   });
 
   it('should be a function', () => {
