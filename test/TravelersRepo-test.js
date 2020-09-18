@@ -9,9 +9,9 @@ import travelersData from './test-data/travelers-data';
 describe('Traveler class and methods', function() {
 
   let travelersRepo;
-  let traveler 1;
-  let traveler 2;
-  let traveler 3;
+  let traveler1;
+  let traveler2;
+  let traveler3;
   let travelers;
   beforeEach(() => {
     traveler1 = new Traveler(travelersData[0])
@@ -31,6 +31,7 @@ describe('Traveler class and methods', function() {
 
   it('should initialize with an array of Travelers', () => {
     expect(travelersRepo.travelers.length).to.equal(3);
+    expect(travelersRepo.travelers[0]).to.deep.equal(traveler1)
   });
 
 });

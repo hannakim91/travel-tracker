@@ -4,7 +4,7 @@ const expect = chai.expect;
 import Traveler from '../src/Traveler';
 import travelersData from './test-data/travelers-data';
 
-describe.only('Traveler class and methods', function() {
+describe('Traveler class and methods', function() {
 
   let traveler;
 

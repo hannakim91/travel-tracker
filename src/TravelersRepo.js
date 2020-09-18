@@ -1,6 +1,6 @@
 class TravelersRepo {
-  constructor() {
-
+  constructor(data) {
+    this.travelers = data
   }
 }
 export default TravelersRepo
