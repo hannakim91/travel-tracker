@@ -25,6 +25,4 @@ describe.only('Traveler class and methods', function() {
     expect(traveler.name).to.equal('Emmet Sandham');
     expect(traveler.travelerType).to.equal('relaxer');
   });
-
-  
 });
