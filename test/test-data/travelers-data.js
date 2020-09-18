@@ -7,7 +7,7 @@ const travelersData = [
   {
     "id": 8,
     "name": "Carlin O'Reilly",
-    "travelerType": "history buff"
+    "travelerType": "shopper"
   },
   {
     "id": 9,
