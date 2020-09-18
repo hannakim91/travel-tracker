@@ -1,5 +1,5 @@
 class Traveler {
-  constructor() {
+  constructor(data) {
 
   }
 }

@@ -11,7 +11,6 @@ describe('Traveler class and methods', function() {
 
   beforeEach(() => {
     travelersRepo = new TravelersRepo();
-    console.log(travelersData)
   });
 
   it('should be a function', () => {

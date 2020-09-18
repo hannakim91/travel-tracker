@@ -4,13 +4,12 @@ const expect = chai.expect;
 import Traveler from '../src/Traveler';
 import travelersData from './test-data/travelers-data';
 
-describe('Traveler class and methods', function() {
+describe.only('Traveler class and methods', function() {
 
   let traveler;
 
   beforeEach(() => {
-    traveler = new Traveler();
-    console.log(travelersData)
+    traveler = new Traveler(travelersData[0]);
   });
 
   it('should be a function', () => {
@@ -21,7 +20,11 @@ describe('Traveler class and methods', function() {
     expect(traveler).to.be.an.instanceof(Traveler);
   });
 
-  it('should initialize with an id', () => {
-    expect(traveler.id).to.equal(595736);
+  it('should initialize with an id, name, and traveler type', () => {
+    expect(traveler.id).to.equal(7);
+    expect(traveler.name).to.equal('Emmet Sandham');
+    expect(traveler.travelerType).to.equal('relaxer');
   });
+
+  
 });
