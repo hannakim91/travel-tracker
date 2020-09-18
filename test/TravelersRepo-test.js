@@ -1,12 +1,12 @@
 import chai from 'chai';
-import Traveler from '../src/Traveler';
 const expect = chai.expect;
 
-import Travelers from '../src/TravelersRepo';
+import Traveler from '../src/TravelersRepo';
 import TravelersRepo from '../src/TravelersRepo';
 import travelersData from './test-data/travelers-data';
+import tripsData from './test-data/trips-data';
 
-describe('Traveler class and methods', function() {
+describe('TravelersRepo class and methods', function() {
 
   let travelersRepo;
   let traveler1;
@@ -34,4 +34,7 @@ describe('Traveler class and methods', function() {
     expect(travelersRepo.travelers[0]).to.deep.equal(traveler1)
   });
 
+  it('should return a list of trips for a given user\'s id #', () => {
+    expect(travelersRepo.findTrips(7, tripsData)).to.deep.equal([]);
+  });
 });
