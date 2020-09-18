@@ -34,7 +34,9 @@ describe('TravelerRepo class and methods', function() {
     expect(travelerRepo.travelers[0]).to.deep.equal(traveler1)
   });
 
-  it('should return a list of trips for a given traveler', () => {
-    expect(travelerRepo.findTrips(traveler1, tripData)).to.deep.equal([tripData[0], tripData[1], tripData[2], tripData[3], tripData[16], tripData[18]]);
+  it('should find and store a list of trips for a given traveler', () => {
+    travelerRepo.findTrips(traveler1, tripData)
+    console.log(traveler1)
+    expect(traveler1.trips).to.deep.equal([tripData[0], tripData[1], tripData[2], tripData[3], tripData[16], tripData[18]]);
   });
 });

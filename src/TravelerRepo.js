@@ -5,7 +5,7 @@ class TravelerRepo {
 
   findTrips(traveler, tripData) {
     const tripsByUserId = tripData.filter(trip => trip.userID === traveler.id)
-    return tripsByUserId
+    traveler.trips = tripsByUserId
   }
 }
 export default TravelerRepo
