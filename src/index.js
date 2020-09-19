@@ -19,7 +19,7 @@ window.addEventListener('load', populateDom);
 
 let travelerRepo;
 let trips = [];
-let destinations;
+let destinations = [];
 
 function populateDom() {
   return fetch.getAllData()
@@ -34,7 +34,10 @@ function populateDom() {
         const journey = new Trip(trip)
         trips.push(journey)
       })
-      destinations = data.destinationData.destinations
+      data.destinationData.destinations.forEach(destination => {
+        const location = new Destination(destination)
+        destinations.push(location)
+      })
     })
     .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
     .catch(err => console.log(err.message));
