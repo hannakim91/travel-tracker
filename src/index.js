@@ -20,15 +20,13 @@ let trips;
 let destinations;
 
 function fetchApiData() {
-  return fetch.getTravelersData()
+  return fetch.getTravelerData()
     .then(data => {
       data.travelers.forEach(traveler => {
         let person = new Traveler(traveler)
         travelers.push(person)
       })
     })
-    //iterate through travelerData and use data to create instances of Traveler 
-    // call domUpdates.assignTravelers
     .then(() => domUpdates.assignTravelerRepo(travelers))
     .catch(err => console.log(err.message));
 }

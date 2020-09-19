@@ -1,4 +1,4 @@
-const getTravelersData = () => {
+const getTravelerData = () => {
   return fetch('https://fe-apps.herokuapp.com/api/v1/travel-tracker/data/travelers/travelers')
     .then(response => response.json())
     // .then(data => data))
@@ -18,10 +18,23 @@ const getDestinationData = () => {
     .then(data => data.destinationsData)
     .catch(err => console.log(err.message));
 }
+
+const getAllData = () => {
+  return Promise.all([getTravelerData(), getTripData(), getDestinationData()])
+    .then(response => {
+      const allData = {};
+      allData.travelerData = response[0];
+      allData.tripData = response[1];
+      allData.destinationData = response[2];
+      return allData;
+    })
+    .catch(err => console.log(err.message));
+}
 export default {
-  getTravelersData,
+  getTravelerData,
   getTripData,
-  getDestinationData
+  getDestinationData,
+  getAllData
 }
 
 
