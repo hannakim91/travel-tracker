@@ -15,21 +15,23 @@ console.log('This is the JavaScript entry file - your code begins here.');
 
 window.addEventListener('load', populateDom);
 
-let travelers = [];
+let travelerRepo;
 let trips;
 let destinations;
 
 function populateDom() {
   return fetch.getAllData()
     .then(data => {
+      let travelers = [];
       data.travelerData.travelers.forEach(traveler => {
-        let person = new Traveler(traveler)
+        const person = new Traveler(traveler)
         travelers.push(person)
+        travelerRepo = new TravelerRepo(travelers)
       })
       trips = data.tripData.trips
       destinations = data.destinationData.destinations
     })
-    .then(() => domUpdates.reassignPropertiesWithData(travelers, trips, destinations))
+    .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
     .catch(err => console.log(err.message));
 
 
