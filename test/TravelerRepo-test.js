@@ -47,6 +47,6 @@ describe('TravelerRepo class and methods', function() {
 
   it('should be able to calculate annual trip spend for a given user', () => {
     travelerRepo.findUserTrips(traveler1, tripData)
-    expect(travelerRepo.calculateAnnualSpend(traveler1, destinationData)).to.equal(1)
+    expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinationData)).to.equal(21703)
   })
 });

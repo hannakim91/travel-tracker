@@ -5,10 +5,5 @@ class Traveler {
     this.travelerType = data.travelerType
     this.trips = []
   }
-
-  calculateAnnualSpend(destinationData) {
-    // add up lodging and flight from destinationData
-    // add 10% for manager fee
-  }
 }
 export default Traveler
