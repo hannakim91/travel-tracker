@@ -22,14 +22,14 @@ let destinations;
 function populateDom() {
   return fetch.getAllData()
     .then(data => {
-      console.log(data)
       data.travelerData.travelers.forEach(traveler => {
         let person = new Traveler(traveler)
         travelers.push(person)
       })
       trips = data.tripData.trips
+      destinations = data.destinationData.destinations
     })
-    .then(() => domUpdates.reassignPropertiesWithData(travelers, trips))
+    .then(() => domUpdates.reassignPropertiesWithData(travelers, trips, destinations))
     .catch(err => console.log(err.message));
 
 

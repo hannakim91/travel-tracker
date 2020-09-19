@@ -6,6 +6,7 @@ const domUpdates = {
   reassignPropertiesWithData(travelerData, tripData, destinationData) {
     this.travelerRepo = travelerData
     this.trips = tripData
+    this.destinations = destinationData
     console.log(this)
   }
 
