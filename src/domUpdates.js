@@ -3,7 +3,7 @@ const domUpdates = {
   trips: null,
   destinations: null,
 
-  assignTravelerRepo(data) {
+  reassignPropertiesWithData(data) {
     this.travelerRepo = data
     console.log(this.travelerRepo)
   }

@@ -28,7 +28,7 @@ function populateDom() {
         travelers.push(person)
       })
     })
-    .then(() => domUpdates.assignTravelerRepo(travelers))
+    .then(() => domUpdates.reassignPropertiesWithData(travelers))
     .catch(err => console.log(err.message));
 
 
