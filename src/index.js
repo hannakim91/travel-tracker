@@ -33,17 +33,5 @@ function populateDom() {
     })
     .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
     .catch(err => console.log(err.message));
-
-
-
-  // return fetch.getTravelerData()
-  //   .then(data => {
-  //     data.travelers.forEach(traveler => {
-  //       let person = new Traveler(traveler)
-  //       travelers.push(person)
-  //     })
-  //   })
-  //   .then(() => domUpdates.assignTravelerRepo(travelers))
-  //   .catch(err => console.log(err.message));
 }
 
