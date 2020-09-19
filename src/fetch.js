@@ -8,7 +8,7 @@ const getTravelerData = () => {
 const getTripData = () => {
   return fetch('https://fe-apps.herokuapp.com/api/v1/travel-tracker/data/trips/trips')
     .then(response => response.json())
-    .then(data => data.tripData)
+    // .then(data => data.tripData)
     .catch(err => console.log(err.message));
 }
 

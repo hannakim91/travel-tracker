@@ -27,8 +27,9 @@ function populateDom() {
         let person = new Traveler(traveler)
         travelers.push(person)
       })
+      trips = data.tripData.trips
     })
-    .then(() => domUpdates.reassignPropertiesWithData(travelers))
+    .then(() => domUpdates.reassignPropertiesWithData(travelers, trips))
     .catch(err => console.log(err.message));
 
 
