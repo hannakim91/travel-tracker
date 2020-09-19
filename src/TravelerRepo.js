@@ -3,7 +3,7 @@ class TravelerRepo {
     this.travelers = data
   }
 
-  findTrips(traveler, tripData) {
+  findUserTrips(traveler, tripData) {
     const tripsByUserId = tripData.filter(trip => trip.userID === traveler.id)
     traveler.trips = tripsByUserId
   }

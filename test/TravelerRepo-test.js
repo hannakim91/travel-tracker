@@ -35,12 +35,12 @@ describe('TravelerRepo class and methods', function() {
   });
 
   it('should find and store a list of trips for a given traveler', () => {
-    travelerRepo.findTrips(traveler1, tripData);
+    travelerRepo.findUserTrips(traveler1, tripData);
     expect(traveler1.trips).to.deep.equal([tripData[0], tripData[1], tripData[2], tripData[3], tripData[16], tripData[18]]);
   });
 
   it('should not modify a traveler\'s trips if no trips match their id', () => {
-    travelerRepo.findTrips(traveler3, tripData);
+    travelerRepo.findUserTrips(traveler3, tripData);
     expect(traveler1.trips).to.deep.equal([]);
   });
 });
