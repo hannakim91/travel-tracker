@@ -1,9 +1,11 @@
 const domUpdates = {
-  travelers: null,
+  travelerRepo: null,
 
-  assignTravelers(data) {
-    this.travelers = data
+  assignTravelerRepo(data) {
+    this.travelerRepo = data
   }
+
+
 }
 
 export default domUpdates;

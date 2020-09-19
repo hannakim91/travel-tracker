@@ -15,13 +15,21 @@ console.log('This is the JavaScript entry file - your code begins here.');
 
 window.addEventListener('load', fetchApiData);
 
-let travelersData;
+let travelers;
 let trips;
 let destinations;
 
 function fetchApiData() {
   return fetch.getTravelersData()
-    .then(data => travelersData = data)
-    .then(() => domUpdates.assignTravelers(travelersData))
+    .then(data => {
+      console.log(data)
+      travelers = data.travelers.forEach(traveler => {
+        let person = new Traveler(traveler)
+        console.log(person)
+      })
+    })
+    //iterate through travelerData and use data to create instances of Traveler 
+    // call domUpdates.assignTravelers
+    // .then(() => domUpdates.assignTravelers(travelerData))
     .catch(err => console.log(err.message));
 }
