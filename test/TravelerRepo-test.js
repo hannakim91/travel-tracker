@@ -5,6 +5,7 @@ import Traveler from '../src/Traveler';
 import TravelerRepo from '../src/TravelerRepo';
 import travelerData from './test-data/traveler-data';
 import tripData from './test-data/trip-data';
+import destinationData from './test-data/destination-data';
 
 describe('TravelerRepo class and methods', function() {
 
@@ -43,4 +44,9 @@ describe('TravelerRepo class and methods', function() {
     travelerRepo.findUserTrips(traveler3, tripData);
     expect(traveler1.trips).to.deep.equal([]);
   });
+
+  it('should be able to calculate annual trip spend for a given user', () => {
+    travelerRepo.findUserTrips(traveler1, tripData)
+    expect(travelerRepo.calculateAnnualSpend(traveler1, destinationData)).to.equal(1)
+  })
 });
