@@ -10,13 +10,15 @@ import fetch from './fetch';
 import domUpdates from './domUpdates';
 import Traveler from './Traveler';
 import TravelerRepo from './TravelerRepo';
+import Trip from './Trip';
+import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
 window.addEventListener('load', populateDom);
 
 let travelerRepo;
-let trips;
+let trips = [];
 let destinations;
 
 function populateDom() {
@@ -28,7 +30,10 @@ function populateDom() {
         travelers.push(person)
         travelerRepo = new TravelerRepo(travelers)
       })
-      trips = data.tripData.trips
+      data.tripData.trips.forEach(trip => {
+        const journey = new Trip(trip)
+        trips.push(journey)
+      })
       destinations = data.destinationData.destinations
     })
     .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
