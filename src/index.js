@@ -20,14 +20,27 @@ let trips;
 let destinations;
 
 function fetchApiData() {
-  return fetch.getTravelerData()
+  return fetch.getAllData()
     .then(data => {
-      data.travelers.forEach(traveler => {
+      console.log(data)
+      data.travelerData.travelers.forEach(traveler => {
         let person = new Traveler(traveler)
         travelers.push(person)
       })
     })
     .then(() => domUpdates.assignTravelerRepo(travelers))
     .catch(err => console.log(err.message));
+
+
+
+  // return fetch.getTravelerData()
+  //   .then(data => {
+  //     data.travelers.forEach(traveler => {
+  //       let person = new Traveler(traveler)
+  //       travelers.push(person)
+  //     })
+  //   })
+  //   .then(() => domUpdates.assignTravelerRepo(travelers))
+  //   .catch(err => console.log(err.message));
 }
 

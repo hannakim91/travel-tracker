@@ -3,6 +3,7 @@ const domUpdates = {
 
   assignTravelerRepo(data) {
     this.travelerRepo = data
+    console.log(this.travelerRepo)
   }
 
 
