@@ -4,7 +4,7 @@ const expect = chai.expect;
 import Destination from '../src/Destination';
 import destinationData from './test-data/destination-data';
 
-describe('Traveler class and methods', function() {
+describe('Destination class and methods', function() {
 
   let destination1;
   let destination2;
