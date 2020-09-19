@@ -1,6 +1,6 @@
 class TravelerRepo {
   constructor(data) {
-    this.travelers = data
+    this.travelers = data;
   }
 
   findUserTrips(traveler, tripData) {
@@ -27,7 +27,7 @@ class TravelerRepo {
   }
 
 }
-export default TravelerRepo
+export default TravelerRepo;
 
 // loop through each trip in user.trips array
 // if trip.date includes year
