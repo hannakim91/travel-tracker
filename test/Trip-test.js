@@ -7,11 +7,9 @@ import tripData from './test-data/trip-data';
 describe('Trip class and methods', function() {
 
   let trip1;
-  let trip2;
 
   beforeEach(() => {
     trip1 = new Trip(tripData[0]);
-    trip2 = new Trip(tripData[1]);
   });
 
   it('should be a function', () => {
