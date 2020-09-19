@@ -24,10 +24,12 @@ describe('Trip class and methods', function() {
 
   it('should initialize with provided data', () => {
  
-    expect(trip1.id).to.equal(15);
-    expect(trip1.destination).to.equal('Manila, Philippines');
-    expect(trip1.estimatedLodgingCostPerDay).to.equal(40);
-    expect(trip1.estimatedFlightCostPerPerson).to.equal(900);
-    expect(trip1.image).to.equal('https://images.unsplash.com/photo-1555557356-51c5d7a8f4c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
-    expect(trip1.alt).to.equal('colorful buildings near the water with docked boats');
+    expect(trip1.id).to.equal(1);
+    expect(trip1.userID).to.equal(7);
+    expect(trip1.destinationID).to.equal(15);
+    expect(trip1.travelers).to.equal(1);
+    expect(trip1.date).to.equal('2019/09/16');
+    expect(trip1.duration).to.equal(8);
+    expect(trip1.status).to.equal('approved');
+    expect(trip1.suggestedActivities).to.deep.equal([]);
   });
