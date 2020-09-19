@@ -12,3 +12,14 @@ import TravelerRepo from './TravelerRepo';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
+window.addEventListener('load', fetchApiData);
+
+let travelers;
+let trips;
+let destinations;
+
+function fetchApiData() {
+  return fetch.getTravelersData()
+    .then(data => console.log(data))
+    .catch(err => console.log(err.message));
+}
