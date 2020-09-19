@@ -2,15 +2,15 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Destination from '../src/Destination';
-import destinationsData from './test-data/destinations-data';
+import destinationData from './test-data/destination-data';
 
 describe('Traveler class and methods', function() {
 
-  let destinations;
+  let destination;
 
   beforeEach(() => {
-    destinations = new Destination();
-    console.log(destinationsData)
+    destination = new Destination();
+    // console.log(destinationData)
   });
 
   it('should be a function', () => {
@@ -18,7 +18,7 @@ describe('Traveler class and methods', function() {
   });
 
   it('should be an instance of Destination', () => {
-    expect(destinations).to.be.an.instanceof(Destination);
+    expect(destination).to.be.an.instanceof(Destination);
   });
 
 });

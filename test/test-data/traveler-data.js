@@ -1,4 +1,4 @@
-const travelersData = [
+const travelerData = [
   {
     "id": 7,
     "name": "Emmet Sandham",
@@ -28,7 +28,12 @@ const travelersData = [
     "id": 12,
     "name": "Lannie Heynel",
     "travelerType": "history buff"
+  },
+  {
+    "id": 16,
+    "name": "Deirdre Paeckmeyer",
+    "travelerType": "foodie"
   }
 ]
 
-export default travelersData
+export default travelerData

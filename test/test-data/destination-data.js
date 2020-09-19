@@ -1,4 +1,4 @@
-const destinationsData = [
+const destinationData = [
   {
     "id": 15,
     "destination": "Manila, Philippines",
@@ -89,4 +89,4 @@ const destinationsData = [
   }
 ]
 
-export default destinationsData
+export default destinationData
