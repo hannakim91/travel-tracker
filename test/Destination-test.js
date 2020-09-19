@@ -9,8 +9,7 @@ describe('Traveler class and methods', function() {
   let destination;
 
   beforeEach(() => {
-    destination = new Destination();
-    // console.log(destinationData)
+    destination = new Destination(destinationData[0]);
   });
 
   it('should be a function', () => {
@@ -21,4 +20,15 @@ describe('Traveler class and methods', function() {
     expect(destination).to.be.an.instanceof(Destination);
   });
 
+  it('should initialize with provided data', () => {
+    expect(destination.id).to.equal(7);
+    expect(destination.destination).to.equal('Emmet Sandham');
+    expect(destination.estimatedLodgingCostPerDay).to.equal('relaxer');
+    expect(destination.estimatedFlightCostPerPerson).to.equal('relaxer');
+    expect(destination.image).to.equal('relaxer');
+    expect(destination.alt).to.equal('relaxer');
+  });
 });
+
+
+    //sad path test - what if a prop is missing
