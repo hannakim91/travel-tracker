@@ -6,7 +6,7 @@ import Destination from '../src/Destination';
 import tripData from './test-data/trip-data';
 import destinationData from './test-data/destination-data';
 
-describe('Trip class and methods', function() {
+describe.only('Trip class and methods', function() {
 
   let trip1;
   let destinations = []
@@ -38,7 +38,8 @@ describe('Trip class and methods', function() {
     expect(trip1.suggestedActivities).to.deep.equal([]);
   });
 
-  it('should calculate cost for a trip', () => {
-    expect(trip1.calculateTripCost(destinations)).to.equal(1220)
-  });
+  it('should have an estimated cost', () => {
+    trip1.calculateTripCost(destinations)
+    expect(trip1.estimatedCost).to.equal(1220)
+  })
 });

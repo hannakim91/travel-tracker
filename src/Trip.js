@@ -8,7 +8,7 @@ class Trip {
     this.duration = data.duration;
     this.status = data.status;
     this.suggestedActivities = data.suggestedActivities;
-
+    this.estimatedCost = 0;
   }
 
   calculateTripCost(destinationData) {
@@ -21,7 +21,7 @@ class Trip {
         tripCost += flightsCost
       }
     })
-    return tripCost
+    this.estimatedCost = tripCost
   }
 }
 
