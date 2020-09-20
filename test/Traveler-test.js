@@ -57,10 +57,19 @@ describe('Traveler class and methods', function() {
     // userID - get from Traveler making request
     // status = pending
     // suggested activities = []
+    const tripInputs = {
+      destinationID: 17,
+      travelers: 4,
+      date: '2021/12/30',
+      duration: 10
+    }
     travelerRepo.findUserTrips(traveler1, tripData)
     expect(traveler1.trips.length).to.equal(6)
-    traveler1.addNewTrip()
+    traveler1.addNewTrip(tripInputs)
     expect(traveler1.trips.length).to.equal(7)
-    expect
+    expect(traveler1.trips[6]).to.deep.equal({})
   })
 });
+
+// actual traveler (user) vs Traveler data model
+// ideally TripRepository should be doing things like calculateTripCost / addNewTrip
