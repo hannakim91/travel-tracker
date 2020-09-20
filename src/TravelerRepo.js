@@ -5,7 +5,7 @@ class TravelerRepo {
 
   findUserTrips(traveler, tripData) {
     const tripsByUserId = tripData.filter(trip => trip.userID === traveler.id)
-    traveler.trips = tripsByUserId
+    traveler.trips = tripsByUserId;
   }
 
   calculateAnnualSpend(user, year, destinationData) {

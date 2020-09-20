@@ -21,7 +21,6 @@ describe('Trip class and methods', function() {
   });
 
   it('should initialize with provided data', () => {
-    console.log(trip1)
     expect(trip1.id).to.equal(1);
     expect(trip1.userID).to.equal(7);
     expect(trip1.destinationID).to.equal(15);
