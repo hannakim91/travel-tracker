@@ -40,6 +40,6 @@ describe.only('Trip class and methods', function() {
 
   it('should have an estimated cost', () => {
     trip1.calculateTripCost(destinations)
-    expect(trip1.estimatedCost).to.equal(1220)
+    expect(trip1.estimatedCost).to.equal(1342)
   })
 });

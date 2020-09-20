@@ -13,6 +13,7 @@ class Trip {
 
   calculateTripCost(destinationData) {
     let tripCost = 0;
+    const AGENT_UPCHARGE = 1.1;
     destinationData.forEach(destination => {
       if (this.destinationID === destination.id) {
         const lodgingCost = destination.estimatedLodgingCostPerDay * this.duration * this.travelers
@@ -21,7 +22,7 @@ class Trip {
         tripCost += flightsCost
       }
     })
-    this.estimatedCost = tripCost
+    this.estimatedCost = parseInt((tripCost * AGENT_UPCHARGE).toFixed(2))
   }
 }
 
