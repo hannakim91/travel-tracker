@@ -9,7 +9,7 @@ import travelerData from './test-data/traveler-data';
 import tripData from './test-data/trip-data';
 import destinationData from './test-data/destination-data';
 
-describe('TravelerRepo class and methods', function() {
+describe.only('TravelerRepo class and methods', function() {
 
   let travelerRepo;
   let traveler1;

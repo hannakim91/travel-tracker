@@ -8,7 +8,6 @@ class Trip {
     this.duration = data.duration;
     this.status = data.status;
     this.suggestedActivities = data.suggestedActivities;
-    this.estimatedCost = 0;
   }
 
   calculateTripCost(destinationData) {
@@ -22,7 +21,7 @@ class Trip {
         tripCost += flightsCost
       }
     })
-    this.estimatedCost = parseInt((tripCost * AGENT_UPCHARGE).toFixed(2))
+    return parseInt((tripCost * AGENT_UPCHARGE).toFixed(2))
   }
 }
 

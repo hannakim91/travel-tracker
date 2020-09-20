@@ -9,22 +9,12 @@ class TravelerRepo {
   }
 
   calculateAnnualSpend(user, year, destinationData) {
-    const annualCost = user.trips.reduce((annualCost, trip) => {
+    return user.trips.reduce((annualCost, trip) => {
       if (trip.date.includes(year)) {
-        // trip.calculateTripCost(destinationData)
-        destinationData.forEach(destination => {
-          if (trip.destinationID === destination.id) {
-            const lodgingCost = destination.estimatedLodgingCostPerDay * trip.duration * trip.travelers
-            const flightsCost = destination.estimatedFlightCostPerPerson * trip.travelers
-            annualCost += lodgingCost
-            annualCost += flightsCost
-          }
-        })
+        annualCost += trip.calculateTripCost(destinationData)
       }
       return annualCost
     }, 0)
-    const costPlusFee = parseInt((annualCost * 1.1).toFixed(2))
-    return costPlusFee
   }
 
 }
