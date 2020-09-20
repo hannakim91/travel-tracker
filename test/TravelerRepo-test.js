@@ -3,17 +3,21 @@ const expect = chai.expect;
 
 import Traveler from '../src/Traveler';
 import TravelerRepo from '../src/TravelerRepo';
+import Trip from '../src/Trip';
+import Destination from '../src/Destination';
 import travelerData from './test-data/traveler-data';
 import tripData from './test-data/trip-data';
 import destinationData from './test-data/destination-data';
 
-describe('TravelerRepo class and methods', function() {
+describe.only('TravelerRepo class and methods', function() {
 
   let travelerRepo;
   let traveler1;
   let traveler2;
   let traveler3;
   let travelers;
+  const destinations = [];
+  const trips = [];
   beforeEach(() => {
     traveler1 = new Traveler(travelerData[0]);
     traveler2 = new Traveler(travelerData[2]);
@@ -36,17 +40,29 @@ describe('TravelerRepo class and methods', function() {
   });
 
   it('should find and store a list of trips for a given traveler', () => {
-    travelerRepo.findUserTrips(traveler1, tripData);
-    expect(traveler1.trips).to.deep.equal([tripData[0], tripData[1], tripData[2], tripData[3], tripData[16], tripData[18]]);
+    tripData.forEach(trip => {
+      const journey = new Trip(trip)
+      trips.push(journey)
+    })
+
+    travelerRepo.findUserTrips(traveler1, trips);
+    expect(traveler1.trips).to.deep.equal([trips[0], trips[1], trips[2], trips[3], trips[16], trips[18]]);
   });
 
   it('should not modify a traveler\'s trips if no trips match their id', () => {
-    travelerRepo.findUserTrips(traveler3, tripData);
-    expect(traveler1.trips).to.deep.equal([]);
+    travelerRepo.findUserTrips(traveler3, trips);
+    expect(traveler3.trips).to.deep.equal([]);
   });
 
   it('should be able to calculate annual trip spend for a given user', () => {
-    travelerRepo.findUserTrips(traveler1, tripData)
-    expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinationData)).to.equal(21703)
+
+    destinationData.forEach(destination => {
+      const location = new Destination(destination)
+      destinations.push(location)
+    })
+
+    travelerRepo.findUserTrips(traveler1, trips)
+    console.log(traveler1.trips)
+    expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinations)).to.equal(21703)
   })
 });

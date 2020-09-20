@@ -3,9 +3,10 @@ const expect = chai.expect;
 
 import Traveler from '../src/Traveler';
 import TravelerRepo from '../src/TravelerRepo';
+import Trip from '../src/Trip';
 import travelerData from './test-data/traveler-data';
-// import tripData from './test-data/trip-data';
-// import destinationData from './test-data/destination-data';
+import tripData from './test-data/trip-data';
+import destinationData from './test-data/destination-data';
 
 describe('Traveler class and methods', function() {
 
@@ -13,14 +14,16 @@ describe('Traveler class and methods', function() {
   // let traveler2;
   // let traveler3;
   // let travelers;
-  // let travelerRepo;
+  let travelerRepo;
+  const destinations = [];
+  const trips = [];
   
   beforeEach(() => {
     traveler1 = new Traveler(travelerData[0]);
     // traveler2 = new Traveler(travelerData[2]);
     // traveler3 = new Traveler(travelerData[6]);
     // travelers = [traveler1, traveler2, traveler3];
-    // travelerRepo = new TravelerRepo(travelers);
+    travelerRepo = new TravelerRepo([traveler1]);
   });
 
   it('should be a function', () => {
@@ -39,5 +42,36 @@ describe('Traveler class and methods', function() {
 
   it('should be able to store an array of trips', () => {
     expect(traveler1.trips).to.deep.equal([]);
+    tripData.forEach(trip => {
+      const journey = new Trip(trip)
+      trips.push(journey)
+    })
+    travelerRepo.findUserTrips(traveler1, tripData)
+    expect(traveler1.trips.length).to.equal(6);
   });
+
+  it('should be able to add a new trip', () => {
+    // object with various pieces of trip info? or individual variables
+    // destinationID, travelers, date, duration
+    // id = getBiggestTripID + 1... in the POST API somehow??
+    // userID - get from Traveler making request
+    // status = pending
+    // suggested activities = []
+    const tripInputs = {
+      destinationID: 17,
+      travelers: 4,
+      date: '2021/12/30',
+      duration: 10
+    }
+    // new instance of trip created with tripInputs and other data needed
+    travelerRepo.findUserTrips(traveler1, tripData)
+    expect(traveler1.trips.length).to.equal(6)
+    traveler1.addNewTrip(tripInputs)
+    //spy test?
+    expect(traveler1.trips.length).to.equal(7)
+    expect(traveler1.trips[6]).to.deep.equal({})
+  })
 });
+
+// actual traveler (user) vs Traveler data model
+// ideally TripRepository should be doing things like calculateTripCost / addNewTrip

@@ -10,26 +10,35 @@ import fetch from './fetch';
 import domUpdates from './domUpdates';
 import Traveler from './Traveler';
 import TravelerRepo from './TravelerRepo';
+import Trip from './Trip';
+import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
 window.addEventListener('load', populateDom);
 
 let travelerRepo;
-let trips;
-let destinations;
+let trips = [];
+let destinations = [];
 
 function populateDom() {
   return fetch.getAllData()
     .then(data => {
+      console.log(data)
       let travelers = [];
       data.travelerData.travelers.forEach(traveler => {
         const person = new Traveler(traveler)
         travelers.push(person)
         travelerRepo = new TravelerRepo(travelers)
       })
-      trips = data.tripData.trips
-      destinations = data.destinationData.destinations
+      data.tripData.trips.forEach(trip => {
+        const journey = new Trip(trip)
+        trips.push(journey)
+      })
+      data.destinationData.destinations.forEach(destination => {
+        const location = new Destination(destination)
+        destinations.push(location)
+      })
     })
     .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
     .catch(err => console.log(err.message));
