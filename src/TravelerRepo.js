@@ -19,11 +19,3 @@ class TravelerRepo {
 
 }
 export default TravelerRepo;
-
-// loop through each trip in user.trips array
-// if trip.date includes year
-  // match trip.id to each destination.id
-    // multiply destination.estimatedLodgingCostPerDay * trip.duration * trip.travelers to get total lodging cost
-    // multiply destination.estimatedFlightCostPerPerson * trip.travelers for total flight cost -- helper methods?
-// add up costs for all trips in traveler.trips
-// add 10% for manager fee
