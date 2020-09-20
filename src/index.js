@@ -15,7 +15,10 @@ import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
+const addNewTripButton = document.querySelector('.add-new-trip-button');
+
 window.addEventListener('load', populateDom);
+addNewTripButton.addEventListener('click', addNewTrip);
 
 let travelerRepo;
 let trips = [];
@@ -44,3 +47,6 @@ function populateDom() {
     .catch(err => console.log(err.message));
 }
 
+function addNewTrip() {
+  
+}
