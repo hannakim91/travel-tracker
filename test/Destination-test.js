@@ -33,7 +33,6 @@ describe('Destination class and methods', function() {
   });
 
   it('should show undefined if some data is missing', () => {
-    console.log(destination2)
     expect(destination2.alt).to.equal('scenic photo of Bangkok, Thailand')
   });
 });

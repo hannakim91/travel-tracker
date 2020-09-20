@@ -4,6 +4,7 @@ const expect = chai.expect;
 import Traveler from '../src/Traveler';
 import TravelerRepo from '../src/TravelerRepo';
 import Trip from '../src/Trip';
+import Destination from '../src/Destination';
 import travelerData from './test-data/traveler-data';
 import tripData from './test-data/trip-data';
 import destinationData from './test-data/destination-data';
@@ -15,6 +16,7 @@ describe('TravelerRepo class and methods', function() {
   let traveler2;
   let traveler3;
   let travelers;
+  let destinations = [];
   const trips = [];
   beforeEach(() => {
     traveler1 = new Traveler(travelerData[0]);
@@ -52,7 +54,13 @@ describe('TravelerRepo class and methods', function() {
   });
 
   it('should be able to calculate annual trip spend for a given user', () => {
+
+    destinationData.forEach(destination => {
+      const location = new Destination(destination)
+      destinations.push(location)
+    })
+
     travelerRepo.findUserTrips(traveler1, trips)
-    expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinationData)).to.equal(21703)
+    expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinations)).to.equal(21703)
   })
 });
