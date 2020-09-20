@@ -16,7 +16,7 @@ describe('TravelerRepo class and methods', function() {
   let traveler2;
   let traveler3;
   let travelers;
-  let destinations = [];
+  const destinations = [];
   const trips = [];
   beforeEach(() => {
     traveler1 = new Traveler(travelerData[0]);
