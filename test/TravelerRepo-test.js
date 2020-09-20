@@ -44,6 +44,7 @@ describe('TravelerRepo class and methods', function() {
       const journey = new Trip(trip)
       trips.push(journey)
     })
+
     travelerRepo.findUserTrips(traveler1, trips);
     expect(traveler1.trips).to.deep.equal([trips[0], trips[1], trips[2], trips[3], trips[16], trips[18]]);
   });

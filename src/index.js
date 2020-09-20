@@ -24,6 +24,7 @@ let destinations = [];
 function populateDom() {
   return fetch.getAllData()
     .then(data => {
+      console.log(data)
       let travelers = [];
       data.travelerData.travelers.forEach(traveler => {
         const person = new Traveler(traveler)

@@ -40,4 +40,8 @@ describe('Traveler class and methods', function() {
   it('should be able to store an array of trips', () => {
     expect(traveler1.trips).to.deep.equal([]);
   });
+
+  it('should be able to add a new trip', () => {
+    // object with various pieces of trip info? or individual variables
+  })
 });
