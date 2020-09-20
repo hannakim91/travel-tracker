@@ -48,7 +48,7 @@ describe('TravelerRepo class and methods', function() {
 
   it('should not modify a traveler\'s trips if no trips match their id', () => {
     travelerRepo.findUserTrips(traveler3, trips);
-    expect(traveler1.trips).to.deep.equal([]);
+    expect(traveler3.trips).to.deep.equal([]);
   });
 
   it('should be able to calculate annual trip spend for a given user', () => {
