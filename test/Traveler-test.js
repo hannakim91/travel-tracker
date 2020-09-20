@@ -63,9 +63,11 @@ describe('Traveler class and methods', function() {
       date: '2021/12/30',
       duration: 10
     }
+    // new instance of trip created with tripInputs and other data needed
     travelerRepo.findUserTrips(traveler1, tripData)
     expect(traveler1.trips.length).to.equal(6)
     traveler1.addNewTrip(tripInputs)
+    //spy test?
     expect(traveler1.trips.length).to.equal(7)
     expect(traveler1.trips[6]).to.deep.equal({})
   })
