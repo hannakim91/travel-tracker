@@ -2,14 +2,21 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Trip from '../src/Trip';
+import Destination from '../src/Destination';
 import tripData from './test-data/trip-data';
+import destinationData from './test-data/destination-data';
 
 describe('Trip class and methods', function() {
 
   let trip1;
+  let destinations = []
 
-  beforeEach(() => {
+  before(() => {
     trip1 = new Trip(tripData[0]);
+    destinationData.forEach(destination => {
+      const location = new Destination(destination)
+      destinations.push(location)
+    })
   });
 
   it('should be a function', () => {
@@ -29,5 +36,9 @@ describe('Trip class and methods', function() {
     expect(trip1.duration).to.equal(8);
     expect(trip1.status).to.equal('approved');
     expect(trip1.suggestedActivities).to.deep.equal([]);
+  });
+
+  it('should calculate cost for a trip', () => {
+    expect(trip1.calculateTripCost(destinations)).to.equal(1220)
   });
 });
