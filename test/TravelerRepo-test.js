@@ -62,6 +62,7 @@ describe('TravelerRepo class and methods', function() {
     })
 
     travelerRepo.findUserTrips(traveler1, trips)
+    console.log(traveler1.trips)
     expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinations)).to.equal(21703)
   })
 });

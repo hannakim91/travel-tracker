@@ -11,6 +11,7 @@ class TravelerRepo {
   calculateAnnualSpend(user, year, destinationData) {
     const annualCost = user.trips.reduce((annualCost, trip) => {
       if (trip.date.includes(year)) {
+        // trip.calculateTripCost(destinationData)
         destinationData.forEach(destination => {
           if (trip.destinationID === destination.id) {
             const lodgingCost = destination.estimatedLodgingCostPerDay * trip.duration * trip.travelers

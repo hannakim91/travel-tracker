@@ -9,6 +9,17 @@ class Trip {
     this.status = data.status;
     this.suggestedActivities = data.suggestedActivities;
   }
+
+  calculateTripCost(destinationData) {
+    destinationData.forEach(destination => {
+      if (trip.destinationID === destination.id) {
+        const lodgingCost = destination.estimatedLodgingCostPerDay * trip.duration * trip.travelers
+        const flightsCost = destination.estimatedFlightCostPerPerson * trip.travelers
+        annualCost += lodgingCost
+        annualCost += flightsCost
+      }
+    })
+  }
 }
 
 export default Trip;

@@ -53,12 +53,14 @@ describe('Traveler class and methods', function() {
   it('should be able to add a new trip', () => {
     // object with various pieces of trip info? or individual variables
     // destinationID, travelers, date, duration
-    // id = ?
+    // id = getBiggestTripID + 1... in the POST API somehow??
     // userID - get from Traveler making request
     // status = pending
     // suggested activities = []
-    expect(traveler1.trips.length).to.equal()
+    travelerRepo.findUserTrips(traveler1, tripData)
+    expect(traveler1.trips.length).to.equal(6)
     traveler1.addNewTrip()
-    expect(traveler1.trips.length).to.equal()
+    expect(traveler1.trips.length).to.equal(7)
+    expect
   })
 });
