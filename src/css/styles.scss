@@ -1,10 +1,7 @@
 @import './_variables.scss';
+@import './_header.scss';
 
-header {
-  background: $lavender;
-  display: flex;
-  justify-content: space-between;
-}
+
 
 main {
   background: $languid-lavender
