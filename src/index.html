@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Treble Travel App</title>
   </head>
   <body>
@@ -24,19 +24,19 @@
             <form class="new-trip-form">
               <section class="new-trip-input">
                 <label for="booking-date-input">Trip Start Date:<label>
-                <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31">
+                <input type="date" for="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31">
               </section>
               <section class="new-trip-input">
                 <label for="booking-duration">Number of Days:</label>
-                <input type="text" name="duration" id="duration-input" required>
+                <input type="text" name="duration" for="duration-input" required>
               </section>
               <section class="new-trip-input">
                 <label for="booking-num-travelers">Number of travelers: </label>
-                <input type="text" name="travelers" id="travelers-input" required>
+                <input type="text" name="travelers" for="travelers-input" required>
               </section>
               <section class="new-trip-input">
                 <label for="booking-destination">Destination: </label>
-                <select name="destinations" id="destination-select">
+                <select name="destinations" for="destination-select">
                   <option value="">Choose your Destination</option>
                 </select>
               </section>
