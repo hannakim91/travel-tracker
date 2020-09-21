@@ -100,11 +100,18 @@ function createRandomTripId() {
 
 function getTripEstimate(event) {
   event.preventDefault()
-
+  generateEstimateTripCost()
 }
 
-function deleteTrip(event) {
-  const idToDelete = { id: 8133 }
+function generateEstimateTripCost() {
+  const estimateData = formatNewTrip()
+  const potentialTrip = new Trip(estimateData)
+  console.log(potentialTrip.calculateTripCost(domUpdates.destinations))
+  // create a new Trip with data to calculate cost
+  //need to be in domUpdates so it has access to data ugh
+}
+
+function cancelTrip(event) {
   return fetch.deleteTrip(idToDelete)
 }
 // MOVE THIS LATER

@@ -58,6 +58,39 @@ const domUpdates = {
       <option class="${destination.id}" value="${destination.id}">${destination.destination}</option>
     `
     })
+  },
+
+  formatNewTrip() {
+    const startDateInput = document.getElementById('date-input').value
+    const durationInput = document.getElementById('duration-input').value
+    const numTravelersInput = document.getElementById('travelers-input').value
+    const destinationIDInput = document.getElementById('destination-select').value
+    
+    const formatDate = startDateInput.replace(/-/g, '\/')
+    
+    const newTrip = {
+      id: this.createRandomTripId(),
+      destinationID: +destinationIDInput,
+      travelers: +numTravelersInput,
+      date: formatDate,
+      duration: +durationInput,
+      status: 'pending',
+      suggestedActivities: [],
+      userID: domUpdates.currentTraveler.id
+    }
+    return newTrip
+  },
+  
+  createRandomTripId() {
+    return Math.floor(1000 + Math.random() * 9000)
+  },
+
+  generateEstimateTripCost() {
+    const estimateData = this.formatNewTrip()
+    const potentialTrip = new Trip(estimateData)
+    console.log(potentialTrip)
+    // create a new Trip with data to calculate cost
+    //need to be in domUpdates so it has access to data ugh
   }
 }
 
