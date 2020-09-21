@@ -40,7 +40,12 @@
         </section>
         <section class="new-trip-input">
           <label for="booking-destination">Destination: </label>
-          <input type="text" name="destination" id="destination" required>
+          <select name="destinations" id="destination-select">
+            <option value="">Choose your Destination</option>
+            <option value="1">Lima, Peru</option>
+            <option value="2">Stockholm, Sweden</option>
+            <option value="3">Sydney, Australia</option>
+          </select>
         </section>
         <section class="new-trip-input">
           <button class="add-new-trip-button" value="Add New Trip">Add New Trip</button>
