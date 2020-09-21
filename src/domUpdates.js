@@ -65,7 +65,8 @@ const domUpdates = {
       <section class="estimate-cost">
         <h4>Estimate Cost: $${estimate}.00</h4>
       `
-    document.querySelector('.new-trip-form').insertAdjacentHTML('afterend', estimateCost)
+    const newTripEstimateSection = document.querySelector('.new-trip-estimate')
+    newTripEstimateSection.innerHTML = estimateCost
   },
 
   appendPendingTrip(trip, destinationName) {
