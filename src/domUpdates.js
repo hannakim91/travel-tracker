@@ -2,6 +2,7 @@ const domUpdates = {
   travelerRepo: null,
   trips: null,
   destinations: null,
+  currentTraveler: null,
 
   reassignPropertiesWithData(travelerData, tripData, destinationData) {
     this.travelerRepo = travelerData
@@ -11,14 +12,34 @@ const domUpdates = {
   },
 
   generateTravelerDashboard() {
+    this.currentTraveler = this.travelerRepo.travelers[20]
     this.generateTravelerWelcome()
+    this.generateTravelerTrips()
   },
 
   generateTravelerWelcome() {
-    const travelerWelcome = document.querySelector('.traveler-welcome')
-    travelerWelcome.innerHTML += `<h2>Welcome ${this.travelerRepo.travelers[30].name}!</h2>`
-  }
+    const travelerWelcomeSection = document.querySelector('.traveler-welcome')
+    travelerWelcomeSection.innerHTML += `<h2>Welcome ${this.currentTraveler.name}!</h2>`
+  },
 
+  generateTravelerTrips() {
+    const travelerTripsSection = document.querySelector('.traveler-trips')
+    this.travelerRepo.findUserTrips(this.currentTraveler, this.trips)
+    this.currentTraveler.trips.forEach(trip => {
+      travelerTripsSection.innerHTML += `
+      <article class="traveler-trip-card">
+        <h4>Destination: ${trip.destinationID}</h4>
+        <p>Start Date: ${trip.date}</p>
+        <p>Days Traveled: ${trip.duration}</p>
+        <p>Travelers: ${trip.travelers}</p>
+        <p>Status: ${trip.status}</p>
+      </article>
+      `
+    })
+
+    //card with traveler's trip details: location, travelers, start date, duration, status, price
+    //need to get destination name from destination ID #
+  }
 
 }
 
