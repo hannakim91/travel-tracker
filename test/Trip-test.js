@@ -41,4 +41,10 @@ describe('Trip class and methods', function() {
   it('should calculate an estimated cost', () => {
     expect(trip1.calculateTripCost(destinations)).to.equal(1342)
   });
+
+  it('should store a destination\'s name', () => {
+    trip1.storeDestinationName(destinations)
+    console.log(trip1)
+    expect(trip1.destinationName).to.equal('Manila, Philippines')
+  })
 });

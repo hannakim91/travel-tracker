@@ -15,7 +15,12 @@ import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
+const addNewTripButton = document.querySelector('.add-new-trip-button');
+const viewEstimateButton = document.querySelector('.view-estimate-button');
+
 window.addEventListener('load', populateDom);
+addNewTripButton.addEventListener('click', addNewTrip);
+viewEstimateButton.addEventListener('click', getTripEstimate);
 
 let travelerRepo;
 let trips = [];
@@ -41,6 +46,75 @@ function populateDom() {
       })
     })
     .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
+    .then(() => domUpdates.generateTravelerDashboard())
     .catch(err => console.log(err.message));
 }
 
+function addNewTrip(event) {
+  event.preventDefault()
+  const newTrip = formatNewTrip()
+  console.log(newTrip)
+  const destinationName = getDestinationName(domUpdates.destinations, newTrip)
+  domUpdates.appendPendingTrip(newTrip, destinationName)
+  // return fetch.postNewTrip(newTrip)
+  //   .catch(err => console.log(err.message));
+}
+
+function createRandomTripId() {
+  return Math.floor(1000 + Math.random() * 9000)
+}
+
+function formatNewTrip() {
+  const startDateInput = document.getElementById('date-input').value
+  const durationInput = document.getElementById('duration-input').value
+  const numTravelersInput = document.getElementById('travelers-input').value
+  const destinationIDInput = document.getElementById('destination-select').value
+  const formatDate = startDateInput.replace(/-/g, '\/')
+  const newTrip = {
+    id: createRandomTripId(),
+    destinationID: +destinationIDInput,
+    travelers: +numTravelersInput,
+    date: formatDate,
+    duration: +durationInput,
+    status: 'pending',
+    suggestedActivities: [],
+    userID: domUpdates.currentTraveler.id
+  }
+  return newTrip
+}
+
+function getDestinationName(destinationData, trip) {
+  return destinationData.find(destination => destination.id === trip.destinationID).destination
+}
+
+function getTripEstimate(event) {
+  event.preventDefault()
+  generateEstimateTripCost()
+}
+
+function generateEstimateTripCost() {
+  const estimateData = formatNewTrip()
+  const potentialTrip = new Trip(estimateData)
+  const potentialCost = potentialTrip.calculateTripCost(domUpdates.destinations)
+  console.log(potentialCost)
+  domUpdates.generateTripEstimate(potentialCost)
+}
+
+function cancelTrip(event) {
+  return fetch.deleteTrip(idToDelete)
+}
+
+function getTodaysDate() {
+  let date = new Date()
+  let day = date.getDate()
+  let month = (date.getMonth() + 1)
+  if (day < 10) {
+    day = `0${day}`
+  }
+  if (month < 10) {
+    month = `0${month}`
+  }
+  let today = `${date.getFullYear()}/${month}/${day}`
+  document.getElementById('date-input').setAttribute('min', today)
+  return today
+}

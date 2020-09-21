@@ -27,8 +27,31 @@ const getAllData = () => {
     })
     .catch(err => console.log(err.message));
 }
+
+const postNewTrip = (newTrip) => {
+  return fetch('https://fe-apps.herokuapp.com/api/v1/travel-tracker/data/trips/trips', {
+    method: 'POST',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(newTrip)
+  })
+    .then(response => response.json())
+    .catch(err => console.log(err.message));
+}
+
+const deleteTrip = (id) => {
+  return fetch('https://fe-apps.herokuapp.com/api/v1/travel-tracker/data/trips/trips', {
+    method: 'DELETE',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(id)
+  })
+    .then(response => response.json())
+    .catch(err => console.log(err.message));
+}
+
 export default {
-  getAllData
+  getAllData,
+  postNewTrip,
+  deleteTrip
 }
 
 
