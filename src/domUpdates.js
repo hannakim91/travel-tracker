@@ -26,10 +26,11 @@ const domUpdates = {
     const travelerTripsSection = document.querySelector('.traveler-trips')
     this.travelerRepo.findUserTrips(this.currentTraveler, this.trips)
     this.currentTraveler.trips.forEach(trip => {
+      trip.storeDestinationName(this.destinations)
       travelerTripsSection.innerHTML += `
       <article class="traveler-trip-card">
-        <h4>Destination: ${trip.destinationID}</h4>
-        <p>Start Date: ${trip.date}</p>
+        <h4>Trip Start Date: ${trip.date}</h4>
+        <h5>${trip.destinationName}</h5>
         <p>Days Traveled: ${trip.duration}</p>
         <p>Travelers: ${trip.travelers}</p>
         <p>Status: ${trip.status}</p>
