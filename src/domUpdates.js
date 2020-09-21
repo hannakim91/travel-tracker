@@ -16,6 +16,7 @@ const domUpdates = {
     this.generateTravelerWelcome()
     this.generateTravelerTrips()
     this.generateTravelerSpending()
+    this.generateDestinationDropdown()
   },
 
   generateTravelerWelcome() {
@@ -48,10 +49,16 @@ const domUpdates = {
     <h3>2020 Spending</h3>
       $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2020, this.destinations)}.00
     `
-  }
+  },
   
-  //card with traveler's trip details: location, travelers, start date, duration, status, price
-  //need to get destination name from destination ID #
+  generateDestinationDropdown() {
+    const dropdown = document.getElementById('destination-select')
+    this.destinations.forEach(destination => {
+      dropdown.innerHTML += `
+      <option class="${destination.id}" value="${destination.id}">${destination.destination}</option>
+    `
+    })
+  }
 }
 
 export default domUpdates;
