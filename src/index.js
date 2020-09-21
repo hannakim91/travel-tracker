@@ -47,6 +47,12 @@ function populateDom() {
     .catch(err => console.log(err.message));
 }
 
-function addNewTrip() {
-  
+function addNewTrip(event) {
+  return fetch.postNewTrip()
+    .catch(err => console.log(err.message));
 }
+
+// pull data from event object, input values -- construct an object
+// Traveler.addNewTrip -- gets moved into addNewTrip function 
+//how to get inputs from form - put it into right format for newTrip and call addNewTrip
+//

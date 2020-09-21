@@ -24,25 +24,25 @@
      </section>
      <article class="traveler-trip-request">
        <!-- pop up section that has trip request deets to fill in -->
-       <form action="" class="form-example">
-        <div class="form-example">
-          <label for="date">Enter start date: </label>
+       <form action="" class="new-trip-form">
+         <div class="new-trip-form">
+           <label class="booking-date" for="user-booking-date-input">Trip Start Date:<label>
+             <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31">
+        <div class="new-trip-form">
+          <label for="date">Number of Days:</label>
           <input type="text" name="date" id="date" required>
         </div>
-        <div class="form-example">
-          <label for="duration">Number of days: </label>
-          <input type="text" name="duration" id="duration" required>
         </div>
-        <div class="form-example">
+        <div class="new-trip-form">
           <label for="travelers">Number of travelers: </label>
           <input type="text" name="travelers" id="travelers" required>
         </div>
-        <div class="form-example">
+        <div class="new-trip-form">
           <label for="destination">Destination: </label>
           <input type="text" name="destination" id="destination" required>
         </div>
-        <div class="form-example">
-          <button class="add-new-trip-button" value="Add New Trip"></button>
+        <div class="new-trip-form">
+          <button class="add-new-trip-button" value="Add New Trip">Add New Trip</button>
         </div>
       </form>
      </article>
