@@ -26,11 +26,13 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 1em;
 }
 
 .new-trip-buttons {
   display: flex;
   justify-content: center;
+  padding-top: .5em;
 }
 
 // TRIP CARDS
