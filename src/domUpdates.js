@@ -11,9 +11,12 @@ const domUpdates = {
   },
 
   generateTravelerDashboard() {
-    console.log('traveler dashboard')
+    this.generateTravelerWelcome()
+  },
+
+  generateTravelerWelcome() {
     const travelerWelcome = document.querySelector('.traveler-welcome')
-    travelerWelcome.innerHTML += `<h2>Welcome ${this.travelerRepo.travelers[0].name}!</h2>`
+    travelerWelcome.innerHTML += `<h2>Welcome ${this.travelerRepo.travelers[30].name}!</h2>`
   }
 
 
