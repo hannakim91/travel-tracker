@@ -106,7 +106,9 @@ function getTripEstimate(event) {
 function generateEstimateTripCost() {
   const estimateData = formatNewTrip()
   const potentialTrip = new Trip(estimateData)
-  console.log(potentialTrip.calculateTripCost(domUpdates.destinations))
+  const potentialCost = potentialTrip.calculateTripCost(domUpdates.destinations)
+  console.log(potentialCost)
+  domUpdates.generateTripEstimate(potentialCost)
 }
 
 function cancelTrip(event) {
