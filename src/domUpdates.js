@@ -58,10 +58,10 @@ const domUpdates = {
       <option class="${destination.id}" value="${destination.id}">${destination.destination}</option>
     `
     })
-  }
+  },
 
   generateEstimate() {
-    const 
+
   }
 }
 

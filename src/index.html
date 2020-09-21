@@ -10,43 +10,43 @@
       <h1>Travel Tracker</h1>
     </header>
     <main>
-     <section class="traveler-welcome">
-     </section>
-     <section class="traveler-dashboard">
-       <article class="traveler-trips">
-         <h3>My Trips</h3>
-       </article>
-       <aside class="traveler-spending">
-       </aside>
-     </section>
-     <article class="traveler-trip-request">
+      <section class="traveler-welcome">
+      </section>
+      <section class="traveler-dashboard">
+        <article class="traveler-trips">
+          <h3>My Trips</h3>
+        </article>
+        <aside class="traveler-spending">
+        </aside>
+      </section>
+      <article class="traveler-trip-request">
        <!-- pop up section that has trip request deets to fill in -->
-       <form class="new-trip-form">
-         <h3>Book a Trip</h3>
-         <section class="new-trip-input">
-          <label for="booking-date-input">Trip Start Date:<label>
-          <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31">
-        </section>
-        <section class="new-trip-input">
-          <label for="booking-duration">Number of Days:</label>
-          <input type="text" name="duration" id="duration-input" required>
-        </section>
-        <section class="new-trip-input">
-          <label for="booking-num-travelers">Number of travelers: </label>
-          <input type="text" name="travelers" id="travelers-input" required>
-        </section>
-        <section class="new-trip-input">
-          <label for="booking-destination">Destination: </label>
-          <select name="destinations" id="destination-select">
-            <option value="">Choose your Destination</option>
-          </select>
-        </section>
-        <section class="new-trip-input new-trip-buttons">
-          <button class="view-estimate-button" value="View Estimate">View Estimate</button>
-          <button class="add-new-trip-button" value="Add New Trip">Add New Trip</button>
-        </section>
-      </form>
-    </article>
+        <form class="new-trip-form">
+          <h3>Book a Trip</h3>
+          <section class="new-trip-input">
+            <label for="booking-date-input">Trip Start Date:<label>
+            <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31">
+          </section>
+          <section class="new-trip-input">
+            <label for="booking-duration">Number of Days:</label>
+            <input type="text" name="duration" id="duration-input" required>
+          </section>
+          <section class="new-trip-input">
+            <label for="booking-num-travelers">Number of travelers: </label>
+            <input type="text" name="travelers" id="travelers-input" required>
+          </section>
+          <section class="new-trip-input">
+            <label for="booking-destination">Destination: </label>
+            <select name="destinations" id="destination-select">
+              <option value="">Choose your Destination</option>
+            </select>
+          </section>
+          <section class="new-trip-input new-trip-buttons">
+            <button class="view-estimate-button" value="View Estimate">View Estimate</button>
+            <button class="add-new-trip-button" value="Add New Trip">Add New Trip</button>
+          </section>
+        </form>
+      </article>
     </main>
 
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
