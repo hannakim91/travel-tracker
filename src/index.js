@@ -65,12 +65,13 @@ function getTodaysDate() {
 
 function addNewTrip(event) {
   event.preventDefault()
-  getTripInputs()
-  return fetch.postNewTrip()
+  const newTrip = formatNewTrip()
+  console.log(domUpdates.currentTraveler.id)
+  return fetch.postNewTrip(newTrip)
     .catch(err => console.log(err.message));
 }
 
-function getTripInputs() {
+function formatNewTrip() {
   const startDateInput = document.getElementById('date-input').value
   const durationInput = document.getElementById('duration-input').value
   const numTravelersInput = document.getElementById('travelers-input').value
@@ -85,10 +86,10 @@ function getTripInputs() {
     date: formatDate,
     duration: +durationInput,
     status: 'pending',
-    suggestedActivities: []
+    suggestedActivities: [],
+    userID: domUpdates.currentTraveler.id
   }
-  console.log(newTrip)
-
+  return newTrip
 }
 
 function createRandomTripId() {

@@ -31,7 +31,7 @@ const getAllData = () => {
 const postNewTrip = (newTrip) => {
   return fetch('https://fe-apps.herokuapp.com/api/v1/travel-tracker/data/trips/trips', {
     method: 'POST',
-    header: {"Content-Type": "application/json"},
+    headers: {'content-type': 'application/json'},
     body: JSON.stringify(newTrip)
   })
     .then(response => response.json())
