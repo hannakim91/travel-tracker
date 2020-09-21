@@ -56,8 +56,8 @@ function addNewTrip(event) {
   console.log(newTrip)
   const destinationName = getDestinationName(domUpdates.destinations, newTrip)
   domUpdates.appendPendingTrip(newTrip, destinationName)
-  // return fetch.postNewTrip(newTrip)
-  //   .catch(err => console.log(err.message));
+  return fetch.postNewTrip(newTrip)
+    .catch(err => console.log(err.message));
 }
 
 function createRandomTripId() {

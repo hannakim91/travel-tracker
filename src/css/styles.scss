@@ -37,6 +37,16 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.traveler-trip-card {
+  background: $lavender;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  text-align: center;
+  // align-content: center;
+}
+
 
 
 // pancake stack for main 
