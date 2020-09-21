@@ -2,4 +2,16 @@ header {
   background: $lavender;
   display: flex;
   justify-content: space-between;
+  padding: 1em;
+}
+
+.name-and-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
 }

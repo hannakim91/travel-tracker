@@ -44,10 +44,10 @@ const domUpdates = {
   generateTravelerSpending() {
     const travelerSpendingAside = document.querySelector('.traveler-spending')
     travelerSpendingAside.innerHTML = `
-    <p>2019 Spending</p>
-      $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2019, this.destinations)}.00
-    <p>2020 Spending</p>
-      $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2020, this.destinations)}.00
+    <p>2019 Spending:
+      $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2019, this.destinations)}.00</p>
+    <p>2020 Spending:
+      $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2020, this.destinations)}.00</p>
     `
   },
   

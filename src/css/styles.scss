@@ -7,8 +7,15 @@ main {
   background: $languid-lavender;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  padding: 1em;
 }
 
+// traveler welcome
+
+.traveler-welcome {
+  display: flex;
+  justify-content: center;
+}
 // TRIP REQUEST
 .trip-request-interaction {
   background: $piggy-pink;
@@ -27,7 +34,7 @@ main {
   background: $heliotrope-gray;
   display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 
