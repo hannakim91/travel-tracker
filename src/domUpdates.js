@@ -36,11 +36,10 @@ const domUpdates = {
       </article>
       `
     })
-
-    //card with traveler's trip details: location, travelers, start date, duration, status, price
-    //need to get destination name from destination ID #
   }
-
+  
+  //card with traveler's trip details: location, travelers, start date, duration, status, price
+  //need to get destination name from destination ID #
 }
 
 export default domUpdates;

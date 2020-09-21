@@ -9,7 +9,7 @@ import travelerData from './test-data/traveler-data';
 import tripData from './test-data/trip-data';
 import destinationData from './test-data/destination-data';
 
-describe.only('TravelerRepo class and methods', function() {
+describe('TravelerRepo class and methods', function() {
 
   let travelerRepo;
   let traveler1;
@@ -62,7 +62,6 @@ describe.only('TravelerRepo class and methods', function() {
     })
 
     travelerRepo.findUserTrips(traveler1, trips)
-    console.log(traveler1.trips)
     expect(travelerRepo.calculateAnnualSpend(traveler1, 2020, destinations)).to.equal(21703)
   })
 });

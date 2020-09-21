@@ -23,6 +23,11 @@ class Trip {
     })
     return parseInt((tripCost * AGENT_UPCHARGE).toFixed(2))
   }
+
+  storeDestinationName(destinationData) {
+    const destination = destinationData.find(destination => destination.id === this.destinationID)
+    this.destinationName = destination.destination
+  }
 }
 
 export default Trip;
