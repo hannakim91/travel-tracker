@@ -47,6 +47,21 @@ function populateDom() {
     .catch(err => console.log(err.message));
 }
 
+function getTodaysDate() {
+  let date = new Date()
+  let day = date.getDate()
+  let month = (date.getMonth() + 1)
+  if (day < 10) {
+    day = `0${day}`
+  }
+  if (month < 10) {
+    month = `0${month}`
+  }
+  let today = `${date.getFullYear()}/${month}/${day}`
+  document.getElementById('date-input').setAttribute('min', today)
+  return today
+}
+
 function addNewTrip(event) {
   console.log('heyo')
   return fetch.postNewTrip()
