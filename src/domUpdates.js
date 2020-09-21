@@ -12,7 +12,7 @@ const domUpdates = {
   },
 
   generateTravelerDashboard() {
-    this.currentTraveler = this.travelerRepo.travelers[25]
+    this.currentTraveler = this.travelerRepo.travelers[40]
     this.generateTravelerWelcome()
     this.generateTravelerTrips()
     this.generateTravelerSpending()
