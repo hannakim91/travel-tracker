@@ -38,9 +38,20 @@ const postNewTrip = (newTrip) => {
     .catch(err => console.log(err.message));
 }
 
+const deleteTrip = (id) => {
+  return fetch('https://fe-apps.herokuapp.com/api/v1/travel-tracker/data/trips/trips', {
+    method: 'DELETE',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(id)
+  })
+    .then(response => response.json())
+    .catch(err => console.log(err.message));
+}
+
 export default {
   getAllData,
-  postNewTrip
+  postNewTrip,
+  deleteTrip
 }
 
 

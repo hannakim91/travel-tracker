@@ -16,9 +16,11 @@ import Destination from './Destination';
 console.log('This is the JavaScript entry file - your code begins here.');
 
 const addNewTripButton = document.querySelector('.add-new-trip-button');
+const viewEstimateButton = document.querySelector('.view-estimate-button');
 
 window.addEventListener('load', populateDom);
 addNewTripButton.addEventListener('click', addNewTrip);
+viewEstimateButton.addEventListener('click', getTripEstimate);
 
 let travelerRepo;
 let trips = [];
@@ -96,7 +98,16 @@ function createRandomTripId() {
   return Math.floor(1000 + Math.random() * 9000)
 }
 
+function getTripEstimate(event) {
+  event.preventDefault()
 
+}
+
+function deleteTrip(event) {
+  const idToDelete = { id: 8133 }
+  return fetch.deleteTrip(idToDelete)
+}
+// MOVE THIS LATER
 // pull data from event object, input values -- construct an object
 // Traveler.addNewTrip -- gets moved into addNewTrip function 
 //how to get inputs from form - put it into right format for newTrip and call addNewTrip
