@@ -53,10 +53,11 @@ function populateDom() {
 function addNewTrip(event) {
   event.preventDefault()
   const newTrip = formatNewTrip()
-  console.log(domUpdates.currentTraveler.id)
-  // add appendPendingTrip here
-  return fetch.postNewTrip(newTrip)
-    .catch(err => console.log(err.message));
+  console.log(newTrip)
+  const destinationName = getDestinationName(domUpdates.destinations, newTrip)
+  domUpdates.appendPendingTrip(newTrip, destinationName)
+  // return fetch.postNewTrip(newTrip)
+  //   .catch(err => console.log(err.message));
 }
 
 function createRandomTripId() {
@@ -82,6 +83,10 @@ function formatNewTrip() {
     userID: domUpdates.currentTraveler.id
   }
   return newTrip
+}
+
+function getDestinationName(destinationData, trip) {
+  return destinationData.find(destination => destination.id === trip.destinationID).destination
 }
 
 function getTripEstimate(event) {

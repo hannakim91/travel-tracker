@@ -68,8 +68,17 @@ const domUpdates = {
     document.querySelector('.new-trip-buttons').insertAdjacentHTML('beforebegin', estimateCost)
   },
 
-  appendPendingTrip() {
-    
+  appendPendingTrip(trip, destinationName) {
+    const travelerTripsSection = document.querySelector('.traveler-trips')
+    travelerTripsSection.innerHTML += `      
+    <article class="traveler-trip-card">
+      <h4>Trip Start Date: ${trip.date}</h4>
+      <h5>${destinationName}</h5>
+      <p>Days Traveled: ${trip.duration}</p>
+      <p>Travelers: ${trip.travelers}</p>
+      <p>Status: ${trip.status}</p>
+    </article>
+  `
   }
 }
 
