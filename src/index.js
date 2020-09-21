@@ -65,18 +65,36 @@ function getTodaysDate() {
 
 function addNewTrip(event) {
   event.preventDefault()
-  getNewTripInputs()
+  getTripInputs()
   return fetch.postNewTrip()
     .catch(err => console.log(err.message));
 }
 
-function getNewTripInputs() {
-  const startDate = document.getElementById('date-input').value
-  const duration = document.getElementById('duration-input').value
-  const numTravelers = document.getElementById('travelers-input').value
-  const destination = document.getElementById('destination-select').value
-  console.log(startDate, duration, numTravelers, destination)
+function getTripInputs() {
+  const startDateInput = document.getElementById('date-input').value
+  const durationInput = document.getElementById('duration-input').value
+  const numTravelersInput = document.getElementById('travelers-input').value
+  const destinationIDInput = document.getElementById('destination-select').value
+  
+  const formatDate = startDateInput.replace(/-/g, '\/')
+  
+  const newTrip = {
+    id: createRandomTripId(),
+    destinationID: +destinationIDInput,
+    travelers: +numTravelersInput,
+    date: formatDate,
+    duration: +durationInput,
+    status: 'pending',
+    suggestedActivities: []
+  }
+  console.log(newTrip)
+
 }
+
+function createRandomTripId() {
+  return Math.floor(1000 + Math.random() * 9000)
+}
+
 
 // pull data from event object, input values -- construct an object
 // Traveler.addNewTrip -- gets moved into addNewTrip function 
