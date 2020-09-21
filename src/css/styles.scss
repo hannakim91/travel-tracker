@@ -9,6 +9,12 @@ main {
   grid-template-rows: auto 1fr auto;
 }
 
+.traveler-trip-cards {
+  background: $heliotrope-gray;
+  display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
 
 // pancake stack for main 
   //RAM (repeat auto minmax) -- center within parent
