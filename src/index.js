@@ -64,9 +64,18 @@ function getTodaysDate() {
 }
 
 function addNewTrip(event) {
-  console.log('heyo')
+  event.preventDefault()
+  getNewTripInputs()
   return fetch.postNewTrip()
     .catch(err => console.log(err.message));
+}
+
+function getNewTripInputs() {
+  const startDate = document.getElementById('date-input').value
+  const duration = document.getElementById('duration-input').value
+  const numTravelers = document.getElementById('travelers-input').value
+  const destination = document.getElementById('destination-select').value
+  console.log(startDate, duration, numTravelers, destination)
 }
 
 // pull data from event object, input values -- construct an object
