@@ -24,15 +24,15 @@
             <form class="new-trip-form">
               <section class="new-trip-input">
                 <label="date-input">Trip Start Date:<label>
-                <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31">
+                <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31" required>
               </section>
               <section class="new-trip-input">
                 <label for="booking-duration">Number of Days:</label>
-                <input type="text" name="duration" id="duration-input" required>
+                <input type="number" min="3" max="60" name="duration" id="duration-input" required>
               </section>
               <section class="new-trip-input">
                 <label for="booking-num-travelers">Number of travelers: </label>
-                <input type="text" name="travelers" id="travelers-input" required>
+                <input type="number" min="1" max="20" name="travelers" id="travelers-input" required>
               </section>
               <section class="new-trip-input">
                 <label for="booking-destination">Destination: </label>
