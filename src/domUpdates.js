@@ -62,10 +62,10 @@ const domUpdates = {
 
   generateTripEstimate(estimate) {
     const estimateCost = `
-      <section class="new-trip-input estimate-cost">
+      <section class="estimate-cost">
         <h4>Estimate Cost: $${estimate}.00</h4>
       `
-    document.querySelector('.new-trip-buttons').insertAdjacentHTML('beforebegin', estimateCost)
+    document.querySelector('.new-trip-form').insertAdjacentHTML('afterend', estimateCost)
   },
 
   appendPendingTrip(trip, destinationName) {

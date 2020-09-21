@@ -9,6 +9,20 @@ main {
   grid-template-rows: auto 1fr auto;
 }
 
+// TRIP REQUEST
+.trip-request-interaction {
+  background: $piggy-pink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.new-trip-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+// TRIP CARDS
 .traveler-trip-cards {
   background: $heliotrope-gray;
   display: grid;
@@ -16,6 +30,9 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
+
+
 // pancake stack for main 
+  // trip-request-interaction = deconstructed pancake
   //RAM (repeat auto minmax) -- center within parent
     // lineup within cards
