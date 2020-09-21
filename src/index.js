@@ -48,6 +48,7 @@ function populateDom() {
 }
 
 function addNewTrip(event) {
+  console.log('heyo')
   return fetch.postNewTrip()
     .catch(err => console.log(err.message));
 }
