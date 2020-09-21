@@ -50,27 +50,17 @@ function populateDom() {
     .catch(err => console.log(err.message));
 }
 
-function getTodaysDate() {
-  let date = new Date()
-  let day = date.getDate()
-  let month = (date.getMonth() + 1)
-  if (day < 10) {
-    day = `0${day}`
-  }
-  if (month < 10) {
-    month = `0${month}`
-  }
-  let today = `${date.getFullYear()}/${month}/${day}`
-  document.getElementById('date-input').setAttribute('min', today)
-  return today
-}
-
 function addNewTrip(event) {
   event.preventDefault()
   const newTrip = formatNewTrip()
   console.log(domUpdates.currentTraveler.id)
+  // add appendPendingTrip here
   return fetch.postNewTrip(newTrip)
     .catch(err => console.log(err.message));
+}
+
+function createRandomTripId() {
+  return Math.floor(1000 + Math.random() * 9000)
 }
 
 function formatNewTrip() {
@@ -94,10 +84,6 @@ function formatNewTrip() {
   return newTrip
 }
 
-function createRandomTripId() {
-  return Math.floor(1000 + Math.random() * 9000)
-}
-
 function getTripEstimate(event) {
   event.preventDefault()
   generateEstimateTripCost()
@@ -114,8 +100,18 @@ function generateEstimateTripCost() {
 function cancelTrip(event) {
   return fetch.deleteTrip(idToDelete)
 }
-// MOVE THIS LATER
-// pull data from event object, input values -- construct an object
-// Traveler.addNewTrip -- gets moved into addNewTrip function 
-//how to get inputs from form - put it into right format for newTrip and call addNewTrip
-//
+
+function getTodaysDate() {
+  let date = new Date()
+  let day = date.getDate()
+  let month = (date.getMonth() + 1)
+  if (day < 10) {
+    day = `0${day}`
+  }
+  if (month < 10) {
+    month = `0${month}`
+  }
+  let today = `${date.getFullYear()}/${month}/${day}`
+  document.getElementById('date-input').setAttribute('min', today)
+  return today
+}

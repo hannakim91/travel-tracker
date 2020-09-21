@@ -66,6 +66,10 @@ const domUpdates = {
         <h4>Estimate Cost: $${estimate}.00</h4>
       `
     document.querySelector('.new-trip-buttons').insertAdjacentHTML('beforebegin', estimateCost)
+  },
+
+  appendPendingTrip() {
+    
   }
 }
 
