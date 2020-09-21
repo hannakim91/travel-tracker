@@ -12,7 +12,7 @@ const domUpdates = {
   },
 
   generateTravelerDashboard() {
-    this.currentTraveler = this.travelerRepo.travelers[30]
+    this.currentTraveler = this.travelerRepo.travelers[25]
     this.generateTravelerWelcome()
     this.generateTravelerTrips()
     this.generateTravelerSpending()
@@ -25,7 +25,7 @@ const domUpdates = {
   },
 
   generateTravelerTrips() {
-    const travelerTripsSection = document.querySelector('.traveler-trips')
+    const travelerTripsSection = document.querySelector('.traveler-trip-cards')
     this.travelerRepo.findUserTrips(this.currentTraveler, this.trips)
     this.currentTraveler.trips.forEach(trip => {
       trip.storeDestinationName(this.destinations)
@@ -69,7 +69,7 @@ const domUpdates = {
   },
 
   appendPendingTrip(trip, destinationName) {
-    const travelerTripsSection = document.querySelector('.traveler-trips')
+    const travelerTripsSection = document.querySelector('.traveler-trip-cards')
     travelerTripsSection.innerHTML += `      
     <article class="traveler-trip-card">
       <h4>Trip Start Date: ${trip.date}</h4>
