@@ -12,9 +12,10 @@ const domUpdates = {
   },
 
   generateTravelerDashboard() {
-    this.currentTraveler = this.travelerRepo.travelers[20]
+    this.currentTraveler = this.travelerRepo.travelers[30]
     this.generateTravelerWelcome()
     this.generateTravelerTrips()
+    this.generateTravelerSpending()
   },
 
   generateTravelerWelcome() {
@@ -37,6 +38,16 @@ const domUpdates = {
       </article>
       `
     })
+  },
+
+  generateTravelerSpending() {
+    const travelerSpendingAside = document.querySelector('.traveler-spending')
+    travelerSpendingAside.innerHTML = `
+    <h3>2019 Spending</h3>
+      $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2019, this.destinations)}.00
+    <h3>2020 Spending</h3>
+      $${this.travelerRepo.calculateAnnualSpend(this.currentTraveler, 2020, this.destinations)}.00
+    `
   }
   
   //card with traveler's trip details: location, travelers, start date, duration, status, price
