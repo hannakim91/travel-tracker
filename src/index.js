@@ -44,6 +44,7 @@ function populateDom() {
       })
     })
     .then(() => domUpdates.reassignPropertiesWithData(travelerRepo, trips, destinations))
+    .then(() => domUpdates.generateTravelerDashboard())
     .catch(err => console.log(err.message));
 }
 
@@ -61,9 +62,6 @@ function getTodaysDate() {
   document.getElementById('date-input').setAttribute('min', today)
   return today
 }
-
-// create a loop in domUpdates to loop through destinations and create options for dropdown menu with value=id#, text = location name
-//https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
 
 function addNewTrip(event) {
   console.log('heyo')
