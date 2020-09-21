@@ -4,7 +4,9 @@
 
 
 main {
-  background: $languid-lavender
+  background: $languid-lavender;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 
