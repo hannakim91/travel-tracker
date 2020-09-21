@@ -69,9 +69,7 @@ function formatNewTrip() {
   const durationInput = document.getElementById('duration-input').value
   const numTravelersInput = document.getElementById('travelers-input').value
   const destinationIDInput = document.getElementById('destination-select').value
-  
   const formatDate = startDateInput.replace(/-/g, '\/')
-  
   const newTrip = {
     id: createRandomTripId(),
     destinationID: +destinationIDInput,
