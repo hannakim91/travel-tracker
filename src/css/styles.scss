@@ -11,7 +11,7 @@ main {
 
 footer {
   padding-bottom: 1em;
-  padding-left: 1em;
+  padding-left: 1.5em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -64,6 +64,7 @@ p {
 .traveler-trip-cards {
   background: $heliotrope-gray;
   display: grid;
+  padding: 1rem;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
