@@ -116,13 +116,16 @@ function handleLogOutClick(event) {
     travelerHeader.classList.add('hidden');
     logInView.classList.remove('hidden');
   }
-  //empty all the travelerDashboard innerHTML
 }
 
 function addNewTripHandler(event) {
   event.preventDefault()
-  if (newTripForm.checkValidity()) {
+  const formatDate = startDateInput.value.replace(/-/g, '\/')
+
+  if (newTripForm.checkValidity() && formatDate > getTodaysDate()) {
     updateTravelerTrips()
+  } else if (newTripForm.checkValidity() && formatDate <= getTodaysDate()) {
+    alert('Please choose a trip start date in the future')
   } else {
     alert('Please enter all form inputs')
   }
@@ -172,11 +175,8 @@ function generateEstimateTripCost() {
 }
 
 function newTripEstimateHandler(event) {
-  //check if date picked is date in future**
-  console.log(getTodaysDate())
-  const formatDate = startDateInput.value.replace(/-/g, '\/')
-  console.log(formatDate)
   event.preventDefault()
+  const formatDate = startDateInput.value.replace(/-/g, '\/')
 
   if (newTripForm.checkValidity() && formatDate > getTodaysDate()) {
     generateEstimateTripCost()
