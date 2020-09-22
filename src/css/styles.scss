@@ -2,8 +2,6 @@
 @import './_login.scss';
 @import './_header.scss';
 
-
-
 main {
   background: $languid-lavender;
   display: grid;
@@ -12,7 +10,8 @@ main {
 }
 
 footer {
-  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -24,7 +23,7 @@ h4 {
   background: $mauvelous;
   padding: .5em;
 }
-h5{
+h5 {
   margin-block-start: .5em;
   margin-block-end: 1em;
 }
@@ -39,6 +38,12 @@ p {
 .traveler-welcome {
   display: flex;
   justify-content: center;
+}
+
+//dashboard
+
+.traveler-dashboard {
+  margin: 1.5em;
 }
 // TRIP REQUEST
 .trip-request-interaction {
