@@ -15,13 +15,22 @@ import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
+const mloginPopup = document.querySelector('.mlogin-popup');
+const mloginTrigger = document.querySelector('.mlogin-trigger');
+const modalCloseButton = document.querySelector('.mclose-button');
+const changeViewButton = document.querySelector('.change-view-button');
+const logInView = document.querySelector('.log-in-view');
 const travelerDashboardView = document.querySelector('.traveler-dashboard-view');
 const travelerHeader = document.querySelector('.traveler-header');
-const logInView = document.querySelector('.log-in-view');
 const addNewTripButton = document.querySelector('.add-new-trip-button');
 const viewEstimateButton = document.querySelector('.view-estimate-button');
 
 window.addEventListener('load', onWindowLoad);
+window.addEventListener('click', windowOnClick);
+mloginTrigger.addEventListener('click', toggleModal);
+modalCloseButton.addEventListener('click', toggleModal);
+changeViewButton.addEventListener('click', viewDashboard);
+
 addNewTripButton.addEventListener('click', addNewTrip);
 viewEstimateButton.addEventListener('click', getTripEstimate);
 
@@ -40,6 +49,23 @@ function onWindowLoad() {
   // } 
   else {
     logInView.classList.remove('hidden')
+  }
+}
+
+function checkLogInDetails() {
+  const username = document.querySelector('#username')
+  const password = document.querySelector('#password')
+  const logInForm = document.querySelector('.mcontent')
+// should check with input values be properties of User?
+  // if (username.value === 'manager' && password.value === 'overlook2020') {
+  //   showManagerDashboard() // not yet a method
+  //   storeData('manager')
+  // } else 
+  if (username.value.includes('traveler') && password.value === 'travel2020') {
+    storeData(username.value)
+    showTravelerDashboard()
+  } else {
+    logInForm.innerHTML += 'Please refresh and enter a valid username and password'
   }
 }
 
@@ -78,6 +104,33 @@ function populateDom() {
     .then(() => domUpdates.generateTravelerDashboard())
     .catch(err => console.log(err.message));
 }
+
+function toggleModal() {
+  mloginPopup.classList.toggle('show-modal');
+}
+
+function windowOnClick(event) {
+  console.log(event.target)
+  if (event.target === mloginPopup) {
+    toggleModal();
+  }
+  handleLogOutClick(event);
+}
+
+function viewDashboard(event) {
+  event.preventDefault();
+  toggleModal()
+  checkLogInDetails()
+}
+
+function handleLogOutClick(event) {
+  if (event.target.id === 'log-out-button') {
+    localStorage.setItem('loggedIn', false)
+    travelerDashboardView.classList.add('hidden')
+    logInView.classList.remove('hidden')
+  }
+}
+
 
 function addNewTrip(event) {
   event.preventDefault()
