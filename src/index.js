@@ -9,9 +9,9 @@ import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
-const mloginPopup = document.querySelector('.mlogin-popup');
-const mloginTrigger = document.querySelector('.mlogin-trigger');
-const modalCloseButton = document.querySelector('.mclose-button');
+const modalLogInPopup = document.querySelector('.modal-log-in-popup');
+const modalLogInTrigger = document.querySelector('.modal-log-in-trigger');
+const modalCloseButton = document.querySelector('.modal-close-button');
 const changeViewButton = document.querySelector('.change-view-button');
 const logInView = document.querySelector('.log-in-view');
 const travelerDashboardView = document.querySelector('.traveler-dashboard-view');
@@ -21,7 +21,7 @@ const viewEstimateButton = document.querySelector('.view-estimate-button');
 
 window.addEventListener('load', onWindowLoad);
 window.addEventListener('click', windowOnClick);
-mloginTrigger.addEventListener('click', toggleModal);
+modalLogInTrigger.addEventListener('click', toggleModal);
 modalCloseButton.addEventListener('click', toggleModal);
 changeViewButton.addEventListener('click', viewDashboard);
 
@@ -49,7 +49,7 @@ function onWindowLoad() {
 function checkLogInDetails() {
   const username = document.querySelector('#username')
   const password = document.querySelector('#password')
-  const logInForm = document.querySelector('.mcontent')
+  const logInForm = document.querySelector('.modal-content')
 // should check with input values be properties of User?
   // if (username.value === 'manager' && password.value === 'overlook2020') {
   //   showManagerDashboard() // not yet a method
@@ -100,12 +100,12 @@ function populateDom() {
 }
 
 function toggleModal() {
-  mloginPopup.classList.toggle('show-modal');
+  modalLogInPopup.classList.toggle('show-modal');
 }
 
 function windowOnClick(event) {
   console.log(event.target)
-  if (event.target === mloginPopup) {
+  if (event.target === modalLogInPopup) {
     toggleModal();
   }
   handleLogOutClick(event);

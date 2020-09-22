@@ -1,12 +1,14 @@
-.mlogin-trigger {
+button:hover {
+  background-color: darkgray;
+}
+
+.modal-log-in-trigger {
   background: transparent;
   width: 8rem;
   height: 2.5rem;
 }
-button:hover {
-  background-color: darkgray;
-}
-.mlogin-popup {
+
+.modal-log-in-popup {
   position: fixed;
   left: 0;
   top: 0;
@@ -18,7 +20,8 @@ button:hover {
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
-.mcontent {
+
+.modal-content {
   position: absolute;
   display: grid;
   grid-row-gap: 1em;
@@ -30,13 +33,15 @@ button:hover {
   width: 24rem;
   border-radius: 0.5rem;
 }
-.mclose-button {
+
+.modal-close-button {
   justify-self: end;
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
   background-color: transparent;
 }
+
 .show-modal {
   opacity: 1;
   visibility: visible;
