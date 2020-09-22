@@ -18,6 +18,7 @@ const travelerDashboardView = document.querySelector('.traveler-dashboard-view')
 const travelerHeader = document.querySelector('.traveler-header');
 const addNewTripButton = document.querySelector('.add-new-trip-button');
 const viewEstimateButton = document.querySelector('.view-estimate-button');
+const newTripForm = document.querySelector('.new-trip-form');
 
 window.addEventListener('load', onWindowLoad);
 window.addEventListener('click', windowOnClick);
@@ -25,8 +26,8 @@ modalLogInTrigger.addEventListener('click', toggleModal);
 modalCloseButton.addEventListener('click', toggleModal);
 changeViewButton.addEventListener('click', viewDashboard);
 
-addNewTripButton.addEventListener('click', addNewTrip);
-viewEstimateButton.addEventListener('click', getTripEstimate);
+addNewTripButton.addEventListener('click', addNewTripHandler);
+viewEstimateButton.addEventListener('click', newTripEstimateHandler);
 
 let travelerRepo;
 let trips = [];
@@ -121,15 +122,19 @@ function handleLogOutClick(event) {
   //empty all the travelerDashboard innerHTML
 }
 
-
-function addNewTrip(event) {
+function addNewTripHandler(event) {
   event.preventDefault()
-  const newTrip = formatNewTrip()
-  console.log(newTrip)
-  const destinationName = getDestinationName(domUpdates.destinations, newTrip)
-  domUpdates.appendPendingTrip(newTrip, destinationName)
-  return fetch.postNewTrip(newTrip)
-    .catch(err => console.log(err.message));
+  console.log(newTripForm.checkValidity())
+  if (newTripForm.checkValidity()) {
+    const newTrip = formatNewTrip()
+    console.log(newTrip)
+    const destinationName = getDestinationName(domUpdates.destinations, newTrip)
+    domUpdates.appendPendingTrip(newTrip, destinationName)
+    return fetch.postNewTrip(newTrip)
+      .catch(err => console.log(err.message));
+  } else {
+    console.log('please enter all form inputs')
+  }
 }
 
 function createRandomTripId() {
@@ -160,17 +165,23 @@ function getDestinationName(destinationData, trip) {
   return destinationData.find(destination => destination.id === trip.destinationID).destination
 }
 
-function getTripEstimate(event) {
-  event.preventDefault()
-  generateEstimateTripCost()
-}
-
 function generateEstimateTripCost() {
   const estimateData = formatNewTrip()
   const potentialTrip = new Trip(estimateData)
   const potentialCost = potentialTrip.calculateTripCost(domUpdates.destinations)
   console.log(potentialCost)
   domUpdates.generateTripEstimate(potentialCost)
+}
+
+function newTripEstimateHandler(event) {
+  //check if date picked is date in future**
+  event.preventDefault()
+  console.log(newTripForm.checkValidity())
+  if (newTripForm.checkValidity()) {
+    generateEstimateTripCost()
+  } else {
+    console.log('please enter all form inputs')
+  }
 }
 
 function cancelTrip(event) {
