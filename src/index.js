@@ -32,7 +32,7 @@ let destinations = [];
 function showTravelerDashboard() {
   travelerDashboardView.classList.remove('hidden')
   travelerHeader.classList.remove('hidden');
-  // logInView.classList.add('hidden')
+  logInView.classList.add('hidden')
   populateDom()
 }
 
