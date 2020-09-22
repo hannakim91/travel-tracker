@@ -1,4 +1,5 @@
 const domUpdates = {
+  todaysDate: null,
   travelerRepo: null,
   trips: null,
   destinations: null,
@@ -8,6 +9,7 @@ const domUpdates = {
     this.travelerRepo = travelerData
     this.trips = tripData
     this.destinations = destinationData
+    console.log(this)
   },
 
   clearTravelerInfo() {
@@ -36,6 +38,7 @@ const domUpdates = {
   generateTravelerTrips() {
     const travelerTripsSection = document.querySelector('.traveler-trip-cards')
     this.travelerRepo.findUserTrips(this.currentTraveler, this.trips)
+    this.travelerRepo.sortUserTrips(this.currentTraveler)
     this.currentTraveler.trips.forEach(trip => {
       trip.storeDestinationName(this.destinations)
       travelerTripsSection.innerHTML += `

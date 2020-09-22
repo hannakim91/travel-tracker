@@ -68,9 +68,9 @@ function showTravelerDashboard() {
 }
 
 function populateDom() {
+  domUpdates.todaysDate = getTodaysDate()
   return fetch.getAllData()
     .then(data => {
-      console.log(data)
       let travelers = [];
       data.travelerData.travelers.forEach(traveler => {
         const person = new Traveler(traveler)
