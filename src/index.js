@@ -7,8 +7,6 @@ import TravelerRepo from './TravelerRepo';
 import Trip from './Trip';
 import Destination from './Destination';
 
-console.log('This is the JavaScript entry file - your code begins here.');
-
 const modalLogInPopup = document.querySelector('.modal-log-in-popup');
 const modalLogInTrigger = document.querySelector('.modal-log-in-trigger');
 const modalCloseButton = document.querySelector('.modal-close-button');
@@ -35,7 +33,6 @@ let destinations = [];
 
 function onWindowLoad() {
   const user = localStorage.getItem('user')
-  console.log(user)
   if (JSON.parse(localStorage.getItem('loggedIn')) === true && user.includes('traveler')) {
     showTravelerDashboard()
   } 
@@ -97,7 +94,6 @@ function toggleModal() {
 }
 
 function windowOnClick(event) {
-  console.log(event.target)
   if (event.target === modalLogInPopup) {
     toggleModal();
   }
@@ -124,17 +120,20 @@ function handleLogOutClick(event) {
 
 function addNewTripHandler(event) {
   event.preventDefault()
-  console.log(newTripForm.checkValidity())
   if (newTripForm.checkValidity()) {
-    const newTrip = formatNewTrip()
-    console.log(newTrip)
-    const destinationName = getDestinationName(domUpdates.destinations, newTrip)
-    domUpdates.appendPendingTrip(newTrip, destinationName)
-    return fetch.postNewTrip(newTrip)
-      .catch(err => console.log(err.message));
+    updateTravelerTrips()
   } else {
-    console.log('please enter all form inputs')
+    alert('Please enter all form inputs')
   }
+}
+
+function updateTravelerTrips() {
+  const newTrip = formatNewTrip()
+  console.log(newTrip)
+  const destinationName = getDestinationName(domUpdates.destinations, newTrip)
+  domUpdates.appendPendingTrip(newTrip, destinationName)
+  return fetch.postNewTrip(newTrip)
+    .catch(err => console.log(err.message));
 }
 
 function createRandomTripId() {
@@ -176,11 +175,10 @@ function generateEstimateTripCost() {
 function newTripEstimateHandler(event) {
   //check if date picked is date in future**
   event.preventDefault()
-  console.log(newTripForm.checkValidity())
   if (newTripForm.checkValidity()) {
     generateEstimateTripCost()
   } else {
-    console.log('please enter all form inputs')
+    alert('Please enter all form inputs')
   }
 }
 

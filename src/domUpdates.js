@@ -8,7 +8,6 @@ const domUpdates = {
     this.travelerRepo = travelerData
     this.trips = tripData
     this.destinations = destinationData
-    console.log(this)
   },
 
   clearTravelerInfo() {
