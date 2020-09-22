@@ -8,11 +8,20 @@ const domUpdates = {
     this.travelerRepo = travelerData
     this.trips = tripData
     this.destinations = destinationData
-    console.log(this)
+  },
+
+  clearTravelerInfo() {
+    const travelerWelcomeSection = document.querySelector('.traveler-welcome')
+    travelerWelcomeSection.innerHTML = '';
+
+    const travelerTripsSection = document.querySelector('.traveler-trip-cards')
+    travelerTripsSection.innerHTML = '';
   },
 
   generateTravelerDashboard() {
-    this.currentTraveler = this.travelerRepo.travelers[40]
+    const username = localStorage.getItem('user')
+    const loggedInId = parseInt(username.replace(/traveler/g, ''));
+    this.currentTraveler = this.travelerRepo.travelers.find(traveler => traveler.id === loggedInId)
     this.generateTravelerWelcome()
     this.generateTravelerTrips()
     this.generateTravelerSpending()

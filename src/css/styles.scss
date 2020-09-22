@@ -1,4 +1,5 @@
 @import './_variables.scss';
+@import './_login.scss';
 @import './_header.scss';
 
 
@@ -7,7 +8,6 @@ main {
   background: $languid-lavender;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  padding: 1em;
   font-family: $body-font;
 }
 
@@ -33,6 +33,7 @@ p {
   margin-block-start: 0em;
   margin-block-end: .5em;
 }
+
 // traveler welcome
 
 .traveler-welcome {
@@ -71,8 +72,9 @@ p {
   // align-content: center;
 }
 
-
-
+.hidden {
+  display: none;
+}
 // pancake stack for main 
   // trip-request-interaction = deconstructed pancake
   //RAM (repeat auto minmax) -- center within parent

@@ -1,0 +1,82 @@
+button {
+  border-radius: .5em;
+}
+
+button:hover {
+  background-color: darkgray;
+}
+
+.log-in-view {
+  background: url(../images/clouds.jpg) no-repeat center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.log-in-interaction {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: .75em;
+  padding: 2em;
+  margin: 0em 3em;
+  display:grid;
+  position: absolute;
+  min-width: 200px;
+  top: 55%;
+}
+
+.log-in-header {
+  font-size: 3rem;
+  margin-block-end: 0rem;
+}
+
+.log-in-slogan {
+  margin-block-start: .25rem;
+  margin-block-end: 2rem;
+  font-style: italic;
+}
+
+.modal-log-in-trigger {
+  background: transparent;
+  width: 10rem;
+  height: 2.5rem;
+}
+
+.modal-log-in-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  display: grid;
+  grid-row-gap: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.modal-close-button {
+  justify-self: end;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: transparent;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
