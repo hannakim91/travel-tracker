@@ -38,9 +38,6 @@ function onWindowLoad() {
   if (JSON.parse(localStorage.getItem('loggedIn')) === true && user.includes('traveler')) {
     showTravelerDashboard()
   } 
-  // else if (JSON.parse(localStorage.getItem('loggedIn')) === true && localStorage.getItem('user') === 'manager') {
-  //   showManagerDashboard()
-  // } 
   else {
     logInView.classList.remove('hidden')
   }
@@ -50,11 +47,6 @@ function checkLogInDetails() {
   const username = document.querySelector('#username')
   const password = document.querySelector('#password')
   const logInForm = document.querySelector('.modal-content')
-// should check with input values be properties of User?
-  // if (username.value === 'manager' && password.value === 'overlook2020') {
-  //   showManagerDashboard() // not yet a method
-  //   storeData('manager')
-  // } else 
   if (username.value.includes('traveler') && password.value === 'travel2020') {
     storeData(username.value)
     showTravelerDashboard()
