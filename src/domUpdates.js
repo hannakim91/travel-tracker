@@ -94,6 +94,7 @@ const domUpdates = {
     const travelerTripsSection = document.querySelector('.traveler-trip-cards')
     travelerTripsSection.innerHTML += `      
     <article class="traveler-trip-card">
+      
       <h4>${destinationName}</h4>
       <h5>Trip Start : ${trip.date}</h5>
       <p>Days Traveled: ${trip.duration}</p>

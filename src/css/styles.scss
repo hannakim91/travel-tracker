@@ -40,11 +40,12 @@ p {
   justify-content: center;
 }
 
-//dashboard
+// dashboard
 
 .traveler-dashboard {
   margin: 1.5em;
 }
+
 // TRIP REQUEST
 .trip-request-interaction {
   background: $piggy-pink;
@@ -77,7 +78,6 @@ p {
   align-items: center;
   text-align: center;
   padding: 1.5rem 0rem;
-  // align-content: center;
 }
 
 .trip-card-image {
@@ -87,7 +87,3 @@ p {
 .hidden {
   display: none;
 }
-// pancake stack for main 
-  // trip-request-interaction = deconstructed pancake
-  //RAM (repeat auto minmax) -- center within parent
-    // lineup within cards
