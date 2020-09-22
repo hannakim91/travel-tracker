@@ -37,20 +37,29 @@ const domUpdates = {
 
   generateTravelerTrips() {
     const travelerTripsSection = document.querySelector('.traveler-trip-cards')
+    const tripStatus = document.getElementById('#trip-status');
+    console.log(tripStatus)
     this.travelerRepo.findUserTrips(this.currentTraveler, this.trips)
     this.travelerRepo.sortUserTrips(this.currentTraveler)
     this.currentTraveler.trips.forEach(trip => {
       trip.storeDestinationName(this.destinations)
+      // if (trip.status === 'approved') {
+      //   tripStatus.classList.add()
+      // } else {
+      //   tripStatus.classList.add()
+      // }
       travelerTripsSection.innerHTML += `
       <article class="traveler-trip-card">
+        <img class="trip-card-image" src="${trip.destinationImage}" alt="${trip.destinationAlt}">
         <h4>${trip.destinationName}</h4>
         <h5>Trip Start Date: ${trip.date}</h5>
         <p>Days Traveled: ${trip.duration}</p>
         <p>Travelers: ${trip.travelers}</p>
-        <p class="trip-status">Status: ${trip.status}</p>
+        <p id="trip-status">Status: <b>${trip.status}</b></p>
       </article>
       `
     })
+
   },
 
   generateTravelerSpending() {
