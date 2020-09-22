@@ -15,16 +15,26 @@ import Destination from './Destination';
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
+const travelerDashboardView = document.querySelector('.traveler-dashboard-view');
+const travelerHeader = document.querySelector('.traveler-header');
+const logInView = document.querySelector('.log-in-view');
 const addNewTripButton = document.querySelector('.add-new-trip-button');
 const viewEstimateButton = document.querySelector('.view-estimate-button');
 
-window.addEventListener('load', populateDom);
+window.addEventListener('load', showTravelerDashboard);
 addNewTripButton.addEventListener('click', addNewTrip);
 viewEstimateButton.addEventListener('click', getTripEstimate);
 
 let travelerRepo;
 let trips = [];
 let destinations = [];
+
+function showTravelerDashboard() {
+  travelerDashboardView.classList.remove('hidden')
+  travelerHeader.classList.remove('hidden');
+  // logInView.classList.add('hidden')
+  populateDom()
+}
 
 function populateDom() {
   return fetch.getAllData()

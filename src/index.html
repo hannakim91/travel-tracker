@@ -5,7 +5,7 @@
     <title>Treble Travel App</title>
   </head>
   <body>
-    <header>
+    <header class="traveler-header hidden">
       <section class="name-and-logo">
         <img src="./images/treble-clef.png" alt="treble logo of treble clef" height="100px" width="100px">
         <h1>treble.</h1>
@@ -14,47 +14,50 @@
       </aside>
     </header>
     <main>
-      <section class="traveler-welcome">
-      </section>
-      <section class="traveler-dashboard">
-        <article class="traveler-trip-request">
-          <!-- pop up section that has trip request deets to fill in -->
-          <h3>Book a Trip</h3>
-          <section class=trip-request-interaction>
-            <form class="new-trip-form">
-              <section class="new-trip-input">
-                <label="date-input">Trip Start Date:<label>
-                <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31" aria-label="input" value="" required="required">
-              </section>
-              <section class="new-trip-input">
-                <label for="required-trip-duration-input">Number of Days:</label>
-                <input type="number" min="3" max="60" name="required-trip-duration-input" id="duration-input" aria-label="input" value="" required="required">
-              </section>
-              <section class="new-trip-input">
-                <label for="booking-num-travelers">Number of travelers: </label>
-                <input type="number" min="1" max="20" name="travelers" id="travelers-input" aria-label="input" value="" required="required">
-              </section>
-              <section class="new-trip-input">
-                <label for="booking-destination">Destination: </label>
-                <select name="destinations" id="destination-select" aria-label="input" value="" required="required">
-                  <option value="">Choose your Destination</option>
-                </select>
-              </section>
-            </form>
-            <section class="new-trip-estimate"></section>
-          </section>
-            <section class="new-trip-buttons">
-              <input type="submit" class="view-estimate-button" value="View Estimate"></button>
-              <button class="add-new-trip-button" value="Add New Trip">Add New Trip</button>
+      
+      <section class="traveler-dashboard-view hidden">
+        <section class="traveler-welcome">
+        </section>
+        <section class="traveler-dashboard">
+          <article class="traveler-trip-request">
+            <!-- pop up section that has trip request deets to fill in -->
+            <h3>Book a Trip</h3>
+            <section class=trip-request-interaction>
+              <form class="new-trip-form">
+                <section class="new-trip-input">
+                  <label="date-input">Trip Start Date:<label>
+                  <input type="date" id="date-input" placeholder="yyyy/mm/dd" min="2020/01/01" max="2025/12/31" aria-label="input" value="" required="required">
+                </section>
+                <section class="new-trip-input">
+                  <label for="required-trip-duration-input">Number of Days:</label>
+                  <input type="number" min="3" max="60" name="required-trip-duration-input" id="duration-input" aria-label="input" value="" required="required">
+                </section>
+                <section class="new-trip-input">
+                  <label for="booking-num-travelers">Number of travelers: </label>
+                  <input type="number" min="1" max="20" name="travelers" id="travelers-input" aria-label="input" value="" required="required">
+                </section>
+                <section class="new-trip-input">
+                  <label for="booking-destination">Destination: </label>
+                  <select name="destinations" id="destination-select" aria-label="input" value="" required="required">
+                    <option value="">Choose your Destination</option>
+                  </select>
+                </section>
+              </form>
+              <section class="new-trip-estimate"></section>
             </section>
-        </article>
-        <article class="traveler-trips">
-          <h3>My Trips</h3>
-          <section class="traveler-trip-cards"></section>
-        </article>
+              <section class="new-trip-buttons">
+                <input type="submit" class="view-estimate-button" value="View Estimate"></button>
+                <button class="add-new-trip-button" value="Add New Trip">Add New Trip</button>
+              </section>
+          </article>
+          <article class="traveler-trips">
+            <h3>My Trips</h3>
+            <section class="traveler-trip-cards"></section>
+          </article>
+        </section>
+        <footer>
+          treble. <i>Start your journey on a high note</i></footer>
       </section>
-      <footer>
-        treble. <i>Start your journey on a high note</i></footer>
     </main>
 
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
