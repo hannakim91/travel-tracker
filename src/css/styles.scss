@@ -51,13 +51,14 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1em;
+  padding: 1rem;
 }
 
 .new-trip-buttons {
+  background: $piggy-pink;
   display: flex;
   justify-content: center;
-  padding-top: .5em;
+  padding-bottom: 1rem;
 }
 
 // TRIP CARDS
