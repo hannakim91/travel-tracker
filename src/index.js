@@ -1,4 +1,5 @@
 import './css/styles.scss';
+import './images/clouds.jpg';
 import './images/treble-clef.png';
 import fetch from './fetch';
 import domUpdates from './domUpdates';
