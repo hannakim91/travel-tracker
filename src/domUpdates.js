@@ -31,11 +31,11 @@ const domUpdates = {
       trip.storeDestinationName(this.destinations)
       travelerTripsSection.innerHTML += `
       <article class="traveler-trip-card">
-        <h4>Trip Start Date: ${trip.date}</h4>
-        <h5>${trip.destinationName}</h5>
+        <h4>${trip.destinationName}</h4>
+        <h5>Trip Start Date: ${trip.date}</h5>
         <p>Days Traveled: ${trip.duration}</p>
         <p>Travelers: ${trip.travelers}</p>
-        <p>Status: ${trip.status}</p>
+        <p class="trip-status">Status: ${trip.status}</p>
       </article>
       `
     })

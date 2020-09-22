@@ -18,6 +18,21 @@ footer {
 h1, h2, h3, h4, h5 {
   font-family: $logo-font;
 }
+
+h4 {
+  margin-block-end: .5em;
+  background: $mauvelous;
+  padding: .5em;
+}
+h5{
+  margin-block-start: .5em;
+  margin-block-end: 1em;
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: .5em;
+}
 // traveler welcome
 
 .traveler-welcome {
@@ -43,15 +58,14 @@ h1, h2, h3, h4, h5 {
 .traveler-trip-cards {
   background: $heliotrope-gray;
   display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .traveler-trip-card {
   background: $lavender;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   align-items: center;
   text-align: center;
   // align-content: center;
