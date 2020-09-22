@@ -21,13 +21,32 @@ const logInView = document.querySelector('.log-in-view');
 const addNewTripButton = document.querySelector('.add-new-trip-button');
 const viewEstimateButton = document.querySelector('.view-estimate-button');
 
-window.addEventListener('load', showTravelerDashboard);
+window.addEventListener('load', onWindowLoad);
 addNewTripButton.addEventListener('click', addNewTrip);
 viewEstimateButton.addEventListener('click', getTripEstimate);
 
 let travelerRepo;
 let trips = [];
 let destinations = [];
+
+function onWindowLoad() {
+  const user = localStorage.getItem('user')
+  console.log(user)
+  if (JSON.parse(localStorage.getItem('loggedIn')) === true && user.includes('traveler')) {
+    showTravelerDashboard()
+  } 
+  // else if (JSON.parse(localStorage.getItem('loggedIn')) === true && localStorage.getItem('user') === 'manager') {
+  //   showManagerDashboard()
+  // } 
+  else {
+    logInView.classList.remove('hidden')
+  }
+}
+
+function storeData(username) {
+  localStorage.setItem('loggedIn', true)
+  localStorage.setItem('user', username)
+}
 
 function showTravelerDashboard() {
   travelerDashboardView.classList.remove('hidden')
