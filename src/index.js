@@ -111,10 +111,14 @@ function viewDashboard(event) {
 
 function handleLogOutClick(event) {
   if (event.target.id === 'log-out-button') {
-    localStorage.setItem('loggedIn', false)
-    travelerDashboardView.classList.add('hidden')
-    logInView.classList.remove('hidden')
+    localStorage.removeItem('user');
+    localStorage.removeItem('loggedIn');
+    domUpdates.clearTravelerInfo();
+    travelerDashboardView.classList.add('hidden');
+    travelerHeader.classList.add('hidden');
+    logInView.classList.remove('hidden');
   }
+  //empty all the travelerDashboard innerHTML
 }
 
 
