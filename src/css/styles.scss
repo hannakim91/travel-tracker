@@ -1,3 +1,79 @@
-// header {
-//   background: #FFFFFF
-// }
+@import './_variables.scss';
+@import './_header.scss';
+
+
+
+main {
+  background: $languid-lavender;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 1em;
+  font-family: $body-font;
+}
+
+footer {
+  padding-top: 1em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $logo-font;
+}
+
+h4 {
+  margin-block-end: .5em;
+  background: $mauvelous;
+  padding: .5em;
+}
+h5{
+  margin-block-start: .5em;
+  margin-block-end: 1em;
+}
+
+p {
+  margin-block-start: 0em;
+  margin-block-end: .5em;
+}
+// traveler welcome
+
+.traveler-welcome {
+  display: flex;
+  justify-content: center;
+}
+// TRIP REQUEST
+.trip-request-interaction {
+  background: $piggy-pink;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.new-trip-buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: .5em;
+}
+
+// TRIP CARDS
+.traveler-trip-cards {
+  background: $heliotrope-gray;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.traveler-trip-card {
+  background: $lavender;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  // align-content: center;
+}
+
+
+
+// pancake stack for main 
+  // trip-request-interaction = deconstructed pancake
+  //RAM (repeat auto minmax) -- center within parent
+    // lineup within cards

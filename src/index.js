@@ -2,10 +2,10 @@
 // Do not delete or rename this file ********
 
 // An example of how you tell webpack to use a CSS (SCSS) file
-import './css/base.scss';
+import './css/styles.scss';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png';
+import './images/treble-clef.png';
 import fetch from './fetch';
 import domUpdates from './domUpdates';
 import Traveler from './Traveler';
@@ -56,8 +56,8 @@ function addNewTrip(event) {
   console.log(newTrip)
   const destinationName = getDestinationName(domUpdates.destinations, newTrip)
   domUpdates.appendPendingTrip(newTrip, destinationName)
-  // return fetch.postNewTrip(newTrip)
-  //   .catch(err => console.log(err.message));
+  return fetch.postNewTrip(newTrip)
+    .catch(err => console.log(err.message));
 }
 
 function createRandomTripId() {
@@ -69,6 +69,7 @@ function formatNewTrip() {
   const durationInput = document.getElementById('duration-input').value
   const numTravelersInput = document.getElementById('travelers-input').value
   const destinationIDInput = document.getElementById('destination-select').value
+  console.log(startDateInput, destinationIDInput)
   const formatDate = startDateInput.replace(/-/g, '\/')
   const newTrip = {
     id: createRandomTripId(),

@@ -1,0 +1,19 @@
+header {
+  background: $lavender;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em 1em;
+}
+
+.name-and-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.5em;
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}
