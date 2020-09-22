@@ -2,16 +2,18 @@ button:hover {
   background-color: darkgray;
 }
 
-.log-in-image {
-  position: absolute;
-  width: 100%;
-  height: auto;
+.log-in-view {
+  background: url(../images/clouds.jpg) no-repeat center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .log-in-interaction {
+  display:grid;
   position: absolute;
-  top: 10%;
-  left: 35%;
+  min-width: 200px;
+  top: 55%;
+  left: 15%;
 }
 .log-in-header {
   font-size: 3rem;
