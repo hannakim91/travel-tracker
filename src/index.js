@@ -17,6 +17,7 @@ const travelerHeader = document.querySelector('.traveler-header');
 const addNewTripButton = document.querySelector('.add-new-trip-button');
 const viewEstimateButton = document.querySelector('.view-estimate-button');
 const newTripForm = document.querySelector('.new-trip-form');
+const startDateInput = document.getElementById('date-input')
 
 window.addEventListener('load', onWindowLoad);
 window.addEventListener('click', windowOnClick);
@@ -141,12 +142,10 @@ function createRandomTripId() {
 }
 
 function formatNewTrip() {
-  const startDateInput = document.getElementById('date-input').value
   const durationInput = document.getElementById('duration-input').value
   const numTravelersInput = document.getElementById('travelers-input').value
   const destinationIDInput = document.getElementById('destination-select').value
-  console.log(startDateInput, destinationIDInput)
-  const formatDate = startDateInput.replace(/-/g, '\/')
+  const formatDate = startDateInput.value.replace(/-/g, '\/')
   const newTrip = {
     id: createRandomTripId(),
     destinationID: +destinationIDInput,
@@ -157,6 +156,7 @@ function formatNewTrip() {
     suggestedActivities: [],
     userID: domUpdates.currentTraveler.id
   }
+  console.log(newTrip)
   return newTrip
 }
 
@@ -168,15 +168,20 @@ function generateEstimateTripCost() {
   const estimateData = formatNewTrip()
   const potentialTrip = new Trip(estimateData)
   const potentialCost = potentialTrip.calculateTripCost(domUpdates.destinations)
-  console.log(potentialCost)
   domUpdates.generateTripEstimate(potentialCost)
 }
 
 function newTripEstimateHandler(event) {
   //check if date picked is date in future**
+  console.log(getTodaysDate())
+  const formatDate = startDateInput.value.replace(/-/g, '\/')
+  console.log(formatDate)
   event.preventDefault()
-  if (newTripForm.checkValidity()) {
+
+  if (newTripForm.checkValidity() && formatDate > getTodaysDate()) {
     generateEstimateTripCost()
+  } else if (newTripForm.checkValidity() && formatDate <= getTodaysDate()) {
+    alert('Please choose a trip start date in the future')
   } else {
     alert('Please enter all form inputs')
   }
