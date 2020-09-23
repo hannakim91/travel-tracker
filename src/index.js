@@ -51,7 +51,7 @@ function checkLogInDetails() {
     storeData(username.value)
     showTravelerDashboard()
   } else {
-    logInForm.innerHTML += 'Please enter a valid username and password'
+    alert('Please enter a valid username and password')
   }
 }
 
