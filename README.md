@@ -5,9 +5,9 @@
 - [Turing Staff](https://github.com/turingschool-examples/webpack-starter-kit/tree/main/src)
 
 ## Abstract
-FreshPicks is a card UI recipe application where users can view and filter recipes based on their existing pantry ingredients and recipe type. There is also a feature that allows users to favorite their recipes, "*shop*" for missing ingredients and "*cook*" a recipe, which removes any ingredients used in the cooking process.
+treble. is a travel booking application where a user can log in and out of their account and book a new trip. Validation methods ensure that a user can only log in with a correct username and password, as well as view estimates for and book a new trip by adding all necessary inputs. 
 
-In this project, we refactored an existing code base and ensured that all functionality was working properly, created a robust testing suite, added new features such as Fetch API, SCSS, Accessibility and testing with Chai Spies.
+A user has access to their past, present, and upcoming trips and their past spending.
 
 ### App in Action
 #### Login Feature
