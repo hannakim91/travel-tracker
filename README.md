@@ -5,9 +5,9 @@
 - [Turing Staff](https://github.com/turingschool-examples/webpack-starter-kit/tree/main/src)
 
 ## Abstract
-treble. is a travel booking application where a user can log in and out of their account and book a new trip. Validation methods ensure that a user can only log in with a correct username and password, as well as view estimates for and book a new trip by adding all necessary inputs. 
+treble. is a travel booking application where a user can log in and out of their account and book a new trip. Validation methods ensure that a user can only log in with a correct username and password, as well as view estimates for and book a new trip by adding all necessary inputs. A user also has access to their past, present, and upcoming trips and their past spending.
 
-A user has access to their past, present, and upcoming trips and their past spending.
+This app was created with test-driven JavaScript, SCSS, and HTML. 
 
 ### App in Action
 #### Login Feature
