@@ -28,9 +28,9 @@ In this project, we refactored an existing code base and ensured that all functi
 ![Treble Add New Trip](https://media.giphy.com/media/2yLeR3FbedVa9G1eYC/giphy.gif)
 
 ## Setup & Installation
-To view and use the application, clone down [this repository](git@github.com:npdarrington/Whats-Cookin.git) and install npm. Run npm  and open [localhost:8080](localhost:8080) on your browser
+To view and use the application, clone down [this repository](git@github.com:hannakim91/travel-tracker.git) and install npm. Run npm  and open [localhost:8080](localhost:8080) on your browser
 ```
-git clone git@github.com:npdarrington/Whats-Cookin.git
+git clone git@github.com:hannakim91/travel-tracker.git
 npm install
 npm start
 ```
