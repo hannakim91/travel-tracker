@@ -10,18 +10,29 @@ FreshPicks is a card UI recipe application where users can view and filter recip
 In this project, we refactored an existing code base and ensured that all functionality was working properly, created a robust testing suite, added new features such as Fetch API, SCSS, Accessibility and testing with Chai Spies.
 
 ### App in Action
-![Filter Recipes GIF](http://g.recordit.co/1b386ahBlT.gif)
+#### Login Feature
+![Treble Log-in](https://media.giphy.com/media/nQpR7oxlCUZRBhUm2H/giphy.gif)
 
+#### Responsive Layout
+![Treble Responsive Layout](https://media.giphy.com/media/gEWaWnJnOEMgxjo7yi/giphy.gif)
 
-![Favorite Recipes GIF](http://g.recordit.co/HS5wkBCq6A.gif)
+#### Mobile View
 
+![Treble Mobile View](https://i.imgur.com/ATx8qML.png)
 
-![Search Recipes by Name GIF](http://g.recordit.co/1iAFzw1Zba.gif)
+#### Accessibility
+
+![Treble Accessibility Score](https://i.imgur.com/6r2u2pm.png)
+#### Get Trip Estimate & Add New Trip Features
+
+![Treble Add New Trip](https://media.giphy.com/media/2yLeR3FbedVa9G1eYC/giphy.gif)
+
 ## Setup & Installation
-To view and use the application, clone down [this repository](git@github.com:npdarrington/Whats-Cookin.git) and install npm.
+To view and use the application, clone down [this repository](git@github.com:npdarrington/Whats-Cookin.git) and install npm. Run npm  and open [localhost:8080](localhost:8080) on your browser
 ```
 git clone git@github.com:npdarrington/Whats-Cookin.git
 npm install
+npm start
 ```
 To view the test suite:
 ```
