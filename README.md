@@ -40,19 +40,19 @@ npm test
 ```
 ## Skills
 - OOP using ES6 classes
-- Array iterator methods/Object methods
-- Test Driven Development - designing an application by testing first and pseudo-coding before coding functionality
-- Accessibility - following ARIA guidelines to provide seamless tabbing for screen readers and choosing a color scheme that accommodates for colorblindness
-- Group workflow using a project board, concise commits, linking commits/PR's to issues, automated PR template, and documented code review
-- Refactoring existing code base by following SRP and DRY principles and using newer technologies
+- Array iterator methods
+- Test Driven Development: design an application by writing tests before writing functionality
+- Accessibility - follow ARIA guidelines to provide seamless tabbing for screen readers and choose a color scheme that accommodates for colorblindness
+- Workflow using a project board, branches, concise commits, linking PR's to issues, automated PR template, and documented code review
+- Planning project based on spec using a wireframe
+- Refactoring "smelly" code
 
 ## Technologies Used
 - Vanilla JS
 - HTML
 - CSS/SASS
 - Webpack
-- Mocha framework
-- Chai library with Spies plug-in for DOM testing
+- Chai & Mocha for testing
 - NPM
 - Fetch API to GET/POST data to a server
 - GitHub/Git
