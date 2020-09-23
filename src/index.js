@@ -105,7 +105,7 @@ function windowOnClick(event) {
 function viewDashboard(event) {
   event.preventDefault();
   toggleModal()
-  checkLogInDetails()
+  checkLogInDetails(event)
 }
 
 function handleLogOutClick(event) {
