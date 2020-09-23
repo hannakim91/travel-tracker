@@ -36,6 +36,7 @@ p {
 button {
   border-radius: .5em;
   padding: .25em;
+  box-shadow: 1px 1px;
 }
 
 button:hover {
@@ -82,7 +83,9 @@ button:hover {
 }
 
 .traveler-trip-card {
+  border-radius: .5rem;
   background: $beau-blue;
+  box-shadow: 5px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
