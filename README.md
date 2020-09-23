@@ -74,7 +74,7 @@ npm test
 - Exploring SCSS functionality to refactor using nesting and variables.
 
 ## Additional Links
-- [Project Board](https://github.com/npdarrington/Whats-Cookin/projects/1)
-- [Visual planning](https://jamboard.google.com/d/1k-Fsp7zcx3fZqDgq3sIR5eu4ZKydwCJyzZFebz4ChQg/viewer?f=3)
-- [Refactor Specs](https://frontend.turing.io/projects/whats-cookin.html)
-- [Original Project Specs](https://frontend.turing.io/projects/module-2/refactor-tractor-wc.html)
+- [Project Board](https://github.com/hannakim91/travel-tracker)
+- [Visual Organization Spreadsheet](https://docs.google.com/spreadsheets/d/1MZ8Qy4vjl9vj-Ih6goFJY9nMPFK7qgZC0VGfVzbGEjk/edit#gid=0)
+- [Wireframe](https://projects.invisionapp.com/freehand/document/SlQAYHbTR)
+- [Project Specs](https://frontend.turing.io/projects/travel-tracker.html)
