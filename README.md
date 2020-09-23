@@ -1,105 +1,83 @@
-# Webpack Starter Kit
+# treble. - Travel Tracker App
 
-## Clone This Repo
+## Contributors
+- [Hanna Kim](https://github.com/hannakim91)
+- [Turing Staff](https://github.com/turingschool-examples/webpack-starter-kit/tree/main/src)
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+## Abstract
+treble. is a travel booking application where a user can log in and out of their account and book a new trip. Validation methods ensure that a user can only log in with a correct username and password, as well as view estimates for and book a new trip by adding all necessary inputs. A user also has access to their past, present, and upcoming trips and their past spending.
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+This app was created with test-driven JavaScript, SCSS, and HTML. 
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+### App in Action
+#### Login Feature
+![Treble Log-in](https://media.giphy.com/media/nQpR7oxlCUZRBhUm2H/giphy.gif)
 
-## Setup
+#### Responsive Layout
+![Treble Responsive Layout](https://media.giphy.com/media/gEWaWnJnOEMgxjo7yi/giphy.gif)
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
+#### Mobile View
 
-Then install the library dependencies. Run:
+![Treble Mobile View](https://i.imgur.com/ATx8qML.png)
 
-```bash
-npm install
+#### Accessibility
+
+![Treble Accessibility Score](https://i.imgur.com/6r2u2pm.png)
+#### Get Trip Estimate & Add New Trip Features
+
+![Treble Add New Trip](https://media.giphy.com/media/2yLeR3FbedVa9G1eYC/giphy.gif)
+
+## Setup & Installation
+To view and use the application, clone down [this repository](git@github.com:hannakim91/travel-tracker.git) and install npm. Run npm  and open [localhost:8080](localhost:8080) on your browser
 ```
-
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
-
-## Where to Add Your Code
-
-### JavaScript
-
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
-
-**Create all of your feature code files in the `src` directory.**
-
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
-
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
-
-### HTML
-
-Add the HTML you need in the `index.html` file in the `./src` directory. There is some boilerplate HTML that exists from the start that you can modify.
-
-### CSS (SCSS/SASS)
-
-This project is setup to use SCSS/SASS files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
-
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`index.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`index.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
+git clone git@github.com:hannakim91/travel-tracker.git
+npm install
 npm start
 ```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
+To view the test suite:
 ```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
 npm test
 ```
+## Skills
+- OOP using ES6 classes
+- Array iterator methods
+- Test Driven Development: design an application by writing tests before writing functionality
+- Accessibility - follow ARIA guidelines to provide seamless tabbing for screen readers and choose a color scheme that accommodates for colorblindness
+- Workflow using a project board, branches, concise commits, linking PR's to issues, automated PR template, and documented code review
+- Planning project based on spec using a wireframe
+- Refactoring "smelly" code
 
-The test results will output to the terminal.
+## Technologies Used
+- Vanilla JS
+- HTML
+- CSS/SASS
+- Webpack
+- Chai & Mocha for testing
+- NPM
+- Fetch API to GET/POST data to a server
+- GitHub/Git
+- Eslint
 
----
+## Wins & Challenges
 
-## Linting Your Code
+### Organizing data into appropriate models: 
+Working on this project helped clear up the difference between a real-life app user and a "user" as a data model.
 
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
+I spent almost 2 of the 6 days given for the project planning out the architecture for my app using a project board and visual organization. I believe this helped me transition to coding the data model and functionality more efficiently.
 
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
+If there was more time, I would have liked to reorganize some methods from `TravelerRepo` into a `TripRepo` to reduce coupling.
 
-## Webpack?
+### Prioritizing tasks:
+I laid good groundwork for how to spend my time on the project by focusing on project organization in the beginning. As I'd write code, new features and/or bugs would pop up - having priority tags helped me to continue to keep tasks organized throughout the project.
 
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
+### Using the same API as other students to `POST` new trip data:
+ While working on separate projects, people made different decisions on how to create a unique trip id; for example, some followed the API's id's in sequential order, while others used the Date object, and I created a random 4-digit number. I learned from a mentor that normally this ID would be classified as a primary key and would **not** rely on a developer to hard-code into a POST request.
 
-## Deploying to GitHub Pages
+ ### Accessible & Responsive UI:
+ I feel this was my most successful attempt so far at designing an accessible and responsive UI - the Lighthouse score for the traveler dashboard is 100 and the page largely works across different browsers, screen sizes, and devices.
 
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+## Additional Links
+- [Project Board](https://github.com/hannakim91/travel-tracker)
+- [Visual Organization Spreadsheet](https://docs.google.com/spreadsheets/d/1MZ8Qy4vjl9vj-Ih6goFJY9nMPFK7qgZC0VGfVzbGEjk/edit#gid=0)
+- [Wireframe](https://projects.invisionapp.com/freehand/document/SlQAYHbTR)
+- [Project Specs](https://frontend.turing.io/projects/travel-tracker.html)
