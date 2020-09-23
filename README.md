@@ -60,18 +60,21 @@ npm test
 
 ## Wins & Challenges
 
-### Challenges
-- Writing our tests based the wrong data -- in hindsight, we should have checked the API data supplied before writing new tests and methods. We learned later in the process that API datasets differed from original project's repo data and could have saved time with functionality that was unneeded (RIP `User.marieCondoMyPantry`)
-- Using API data that can be modified by multiple developers (both within our group and other students in the class). We're all learning how to use API data for the first time, so data was sometimes altered in ways that might not work with how our class methods were written.
-- Posting data to the server. We realized as a group that this would have been easier had we used Promise.all to ensure that all data that we needed to post to the server was available as our methods were using it.
+### Organizing data into appropriate models: 
+Working on this project helped clear up the difference between a real-life app user and a "user" as a data model.
 
-### Wins
-- Tackling complicated logic involving multiple datasets.
-- Learning how to take advantage of Webpack's features to consolidate our files into one neat bundle. We found that while everything doesn't have to be linked through an `html scripts` tag, the correct files must be linked in `index.js` and have a chosen entry point (`scripts.js`) before deployment.
-- Using `Fetch` to `GET` data from a server.
-- Deciding (not) to use inheritance - while this is a new feature we learned during this module, we felt that it did not offer enough advantages to be applicable for how we structured our classes.
-- Implementing Chai Spies to test functionality on the DOM.
-- Exploring SCSS functionality to refactor using nesting and variables.
+I spent almost 2 of the 6 days given for the project planning out the architecture for my app using a project board and visual organization. I believe this helped me transition to coding the data model and functionality more efficiently.
+
+If there was more time, I would have liked to reorganize some methods from `TravelerRepo` into a `TripRepo` to reduce coupling.
+
+### Prioritizing tasks:
+I laid good groundwork for how to spend my time on the project by focusing on project organization in the beginning. As I'd write code, new features and/or bugs would pop up - having priority tags helped me to continue to keep tasks organized throughout the project.
+
+### Using the same API as other students to `POST` new trip data:
+ While working on separate projects, people made different decisions on how to create a unique trip id; for example, some followed the API's id's in sequential order, while others used the Date object, and I created a random 4-digit number. I learned from a mentor that normally this ID would be classified as a primary key and would **not** rely on a developer to hard-code into a POST request.
+
+ ### Accessible & Responsive UI:
+ I feel this was my most successful attempt so far at designing an accessible and responsive UI - the Lighthouse score for the traveler dashboard is 100 and the page largely works across different browsers, screen sizes, and devices.
 
 ## Additional Links
 - [Project Board](https://github.com/hannakim91/travel-tracker)
