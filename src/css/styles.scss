@@ -1,6 +1,7 @@
 @import './_variables.scss';
 @import './_login.scss';
 @import './_header.scss';
+@import './_traveler-dashboard.scss';
 
 main {
   background: $languid-lavender;
@@ -43,60 +44,6 @@ button:hover {
   background-color: $flax;
 }
 
-
-// traveler welcome
-
-.traveler-welcome {
-  display: flex;
-  justify-content: center;
-}
-
-// dashboard
-
-.traveler-dashboard {
-  margin: 1.5em;
-}
-
-// TRIP REQUEST
-.trip-request-interaction {
-  background: $gainsboro;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.new-trip-buttons {
-  background: $gainsboro;
-  display: flex;
-  justify-content: space-evenly;
-  padding-bottom: 1rem;
-}
-
-// TRIP CARDS
-.traveler-trip-cards {
-  background: $slate-gray;
-  display: grid;
-  padding: 1rem;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.traveler-trip-card {
-  border-radius: .5rem;
-  background: $beau-blue;
-  box-shadow: 5px 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem 0rem;
-}
-
-.trip-card-image {
-  height: 170px;
-  width: 80%;
-}
 .hidden {
   display: none;
 }
