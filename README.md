@@ -76,8 +76,17 @@ I laid good groundwork for how to spend my time on the project by focusing on pr
  ### Accessible & Responsive UI:
  I feel this was my most successful attempt so far at designing an accessible and responsive UI - the Lighthouse score for the traveler dashboard is 100 and the page largely works across different browsers, screen sizes, and devices.
 
+ ### App Branding:
+ I had fun adding some marketing aspects to the project: brand name and slogan, primarily.
+
+ I would have liked to play around more with the color scheme and logo if time permitted!
+
 ## Additional Links
 - [Project Board](https://github.com/hannakim91/travel-tracker)
 - [Visual Organization Spreadsheet](https://docs.google.com/spreadsheets/d/1MZ8Qy4vjl9vj-Ih6goFJY9nMPFK7qgZC0VGfVzbGEjk/edit#gid=0)
 - [Wireframe](https://projects.invisionapp.com/freehand/document/SlQAYHbTR)
 - [Project Specs](https://frontend.turing.io/projects/travel-tracker.html)
+
+## Media Credits
+- [Login Page Background](https://unsplash.com/@technobulka)
+- [Logo Art](https://www.pngrepo.com/svg/107455/treble-clef)
