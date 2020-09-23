@@ -27,6 +27,8 @@ class Trip {
   storeDestinationName(destinationData) {
     const destination = destinationData.find(destination => destination.id === this.destinationID)
     this.destinationName = destination.destination
+    this.destinationImage = destination.image
+    this.destinationAlt = destination.alt
   }
 }
 

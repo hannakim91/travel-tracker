@@ -1,5 +1,5 @@
 header {
-  background: $lavender;
+  background: $mountbatten-pink;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,4 +16,11 @@ header {
     height: 50px;
     width: 50px;
   }
+}
+
+.header-right {
+  font-family: $body-font;
+  display: grid;
+  align-items: end;
+  margin-right: 1em;
 }

@@ -8,6 +8,13 @@ class TravelerRepo {
     traveler.trips = tripsByUserId;
   }
 
+  sortUserTrips(traveler) {
+    const sortedTrips = traveler.trips.sort((tripA, tripB) => {
+      return new Date(tripB.date) - new Date(tripA.date)
+    })
+    traveler.trips = sortedTrips
+  }
+
   calculateAnnualSpend(user, year, destinationData) {
     return user.trips.reduce((annualCost, trip) => {
       if (trip.date.includes(year)) {

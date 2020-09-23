@@ -37,8 +37,7 @@ function onWindowLoad() {
   const user = localStorage.getItem('user')
   if (JSON.parse(localStorage.getItem('loggedIn')) === true && user.includes('traveler')) {
     showTravelerDashboard()
-  } 
-  else {
+  } else {
     logInView.classList.remove('hidden')
   }
 }
@@ -46,12 +45,11 @@ function onWindowLoad() {
 function checkLogInDetails() {
   const username = document.querySelector('#username')
   const password = document.querySelector('#password')
-  const logInForm = document.querySelector('.modal-content')
   if (username.value.includes('traveler') && password.value === 'travel2020') {
     storeData(username.value)
     showTravelerDashboard()
   } else {
-    logInForm.innerHTML += 'Please enter a valid username and password'
+    alert('Please enter a valid username and password')
   }
 }
 
@@ -68,9 +66,9 @@ function showTravelerDashboard() {
 }
 
 function populateDom() {
+  domUpdates.todaysDate = getTodaysDate()
   return fetch.getAllData()
     .then(data => {
-      console.log(data)
       let travelers = [];
       data.travelerData.travelers.forEach(traveler => {
         const person = new Traveler(traveler)
@@ -105,7 +103,7 @@ function windowOnClick(event) {
 function viewDashboard(event) {
   event.preventDefault();
   toggleModal()
-  checkLogInDetails()
+  checkLogInDetails(event)
 }
 
 function handleLogOutClick(event) {
@@ -121,7 +119,7 @@ function handleLogOutClick(event) {
 
 function addNewTripHandler(event) {
   event.preventDefault()
-  const formatDate = startDateInput.value.replace(/-/g, '\/')
+  const formatDate = startDateInput.value.replace(/-/g, '/')
 
   if (newTripForm.checkValidity() && formatDate > getTodaysDate()) {
     updateTravelerTrips()
@@ -134,7 +132,6 @@ function addNewTripHandler(event) {
 
 function updateTravelerTrips() {
   const newTrip = formatNewTrip()
-  console.log(newTrip)
   const destinationName = getDestinationName(domUpdates.destinations, newTrip)
   domUpdates.appendPendingTrip(newTrip, destinationName)
   return fetch.postNewTrip(newTrip)
@@ -149,7 +146,7 @@ function formatNewTrip() {
   const durationInput = document.getElementById('duration-input').value
   const numTravelersInput = document.getElementById('travelers-input').value
   const destinationIDInput = document.getElementById('destination-select').value
-  const formatDate = startDateInput.value.replace(/-/g, '\/')
+  const formatDate = startDateInput.value.replace(/-/g, '/')
   const newTrip = {
     id: createRandomTripId(),
     destinationID: +destinationIDInput,
@@ -160,7 +157,6 @@ function formatNewTrip() {
     suggestedActivities: [],
     userID: domUpdates.currentTraveler.id
   }
-  console.log(newTrip)
   return newTrip
 }
 
@@ -177,7 +173,7 @@ function generateEstimateTripCost() {
 
 function newTripEstimateHandler(event) {
   event.preventDefault()
-  const formatDate = startDateInput.value.replace(/-/g, '\/')
+  const formatDate = startDateInput.value.replace(/-/g, '/')
 
   if (newTripForm.checkValidity() && formatDate > getTodaysDate()) {
     generateEstimateTripCost()

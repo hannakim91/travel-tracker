@@ -1,8 +1,7 @@
 @import './_variables.scss';
 @import './_login.scss';
 @import './_header.scss';
-
-
+@import './_traveler-dashboard.scss';
 
 main {
   background: $languid-lavender;
@@ -12,7 +11,8 @@ main {
 }
 
 footer {
-  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1.5em;
 }
 
 h1, h2, h3, h4, h5 {
@@ -21,10 +21,10 @@ h1, h2, h3, h4, h5 {
 
 h4 {
   margin-block-end: .5em;
-  background: $mauvelous;
+  background: $magic-mint;
   padding: .5em;
 }
-h5{
+h5 {
   margin-block-start: .5em;
   margin-block-end: 1em;
 }
@@ -34,48 +34,16 @@ p {
   margin-block-end: .5em;
 }
 
-// traveler welcome
-
-.traveler-welcome {
-  display: flex;
-  justify-content: center;
-}
-// TRIP REQUEST
-.trip-request-interaction {
-  background: $piggy-pink;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 1em;
+button {
+  border-radius: .5em;
+  padding: .25em;
+  box-shadow: 1px 1px;
 }
 
-.new-trip-buttons {
-  display: flex;
-  justify-content: center;
-  padding-top: .5em;
-}
-
-// TRIP CARDS
-.traveler-trip-cards {
-  background: $heliotrope-gray;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.traveler-trip-card {
-  background: $lavender;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  // align-content: center;
+button:hover {
+  background-color: $flax;
 }
 
 .hidden {
   display: none;
 }
-// pancake stack for main 
-  // trip-request-interaction = deconstructed pancake
-  //RAM (repeat auto minmax) -- center within parent
-    // lineup within cards

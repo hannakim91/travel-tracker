@@ -36,6 +36,3 @@ describe('Destination class and methods', function() {
     expect(destination2.alt).to.equal('scenic photo of Bangkok, Thailand')
   });
 });
-
-
-    //sad path test - what if a prop is missing
